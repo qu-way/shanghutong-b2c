@@ -1,0 +1,19 @@
+<!--pages/goldcoin/received/received.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+   <van-tab title="全部">
+      <view class="block">
+         <column center title="{{title}}" time="{{time}}" value="+8" label="订单号：{{orderNumber}}" />
+      </view>
+   </van-tab>
+   <van-tab title="获取">
+      <view class="block">
+         <column center title="{{title}}" time="{{time}}" value="+8" label="订单号：{{orderNumber}}" />
+      </view>
+
+   </van-tab>
+   <van-tab title="使用">
+      <view class="block">
+         <column center title="{{title}}" time="{{time}}" value="{{amount}}" label="订单号：{{orderNumber}}" />
+      </view>
+   </van-tab>
+</van-tabs>

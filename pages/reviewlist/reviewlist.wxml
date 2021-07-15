@@ -1,0 +1,30 @@
+<!--pages/reviewlist/reviewlist.wxml-->
+<view class='containers'>
+   <view class='review_content_container'>
+      <view class='review_content' bindtap='reviewDetails' wx:for="{{commentList}}" wx:key="id">
+         <view class='container'>
+            <view class="left">
+               <image class='img-title' src="../../images/baiguoyuan.jpg" mode="widthFix"></image>
+            </view>
+            <view class='right'>
+               <view class='title'>{{item.comment}}</view>
+               <text class="date">{{item.createTime}}</text>
+            </view>
+            <view class='grade_img'>
+               <text class="iconfont icon-shoucang" wx:for="{{item.matchDescriptionScore}}" wx:key="id"></text>
+               <text class="iconfont icon-shoucang2" wx:for="{{5-item.matchDescriptionScore}}" wx:key="id"></text>
+            </view>
+         </view>
+         <view class='grade'>
+            <view class="tit">{{item.comment}}</view>
+         </view>
+      </view>
+      <view wx:if="{{commentList.length<=0 || !commentList}}" class="empty">
+         <image src='../../images/nocomment.png' mode="widthFix"></image>
+         <!-- <view class="iconfont icon-zanwupinglun"> -->
+         <!-- </view> -->
+         <text>此商品没有相关评论</text>
+      </view>
+   </view>
+
+</view>

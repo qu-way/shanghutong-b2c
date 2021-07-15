@@ -1,0 +1,5 @@
+<view class="notice">
+   <view class="line" wx:for="{{noticeList}}" wx:key="index">
+      <van-cell title="{{item.noticeTitle}}" url="/pages/noticeDetails/noticeDetails?id={{item.id}}" is-link />
+   </view>
+</view>

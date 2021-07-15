@@ -1,0 +1,50 @@
+
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<van-notify id="van-notify" />
+
+<view class="page">
+    <view class="page__bd">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <mp-cells>
+                <mp-cell prop="name" title="姓名">
+                    <input type="text" bindinput="formInputName" data-field="name" class="weui-input" placeholder="请输入真实姓名"/>
+                </mp-cell>
+                <mp-cell prop="mobile" title="手机号" >
+                    <input type="number" bindinput="formInputPhone" data-field="mobile" class="weui-input" placeholder="请输入手机号"/>
+                </mp-cell>
+
+                <mp-cell title="所在地区">
+                <picker mode="region"  bindchange="formRegionChange" value="{{region}}" data-field="region" custom-item="{{customItem}}">
+                    <!-- custom-item="{{customItem}}"> -->
+                    <view class="picker">
+                        <text class="mar">{{region[0]}}</text>
+                        <text class="mar">{{region[1]}}</text>
+                        <text class="mar">{{region[2]}}</text>
+                    </view>
+                </picker>
+                </mp-cell>
+    <!-- 详细地址 -->
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd" prop="address">
+                    <textarea class="weui-textarea" bindinput="formInputAddress" value="{{address}}" data-field="address" placeholder="详细地址：如道路、门牌号、小区、楼栋号、单元室等" style="height: 4em" />
+                </view>
+            </view>
+        </view>
+    </mp-cells>
+    </mp-form>
+
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_switch">
+                <view class="weui-cell__bd">设为默认地址</view>
+                <view class="weui-cell__ft">
+                    <switch checked="{{formData.defaultChecked}}" bindchange="defaultChange" color="#e54148" />
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <view class="btn">
+            <button class="color" bindtap="submitForm">保存</button>
+        </view>
+</view>

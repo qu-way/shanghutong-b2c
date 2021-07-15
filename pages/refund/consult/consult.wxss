@@ -1,0 +1,97 @@
+page {
+  background-color: #F3F4F8;
+}
+.consult {
+  width: 100vw;
+  padding: 20rpx 24rpx 20rpx 24rpx;
+  box-sizing: border-box;
+}
+.consult .shop-owner {
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 20rpx;
+}
+.owner {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-bottom: 30rpx;
+}
+.owner .img {
+  flex: 1;
+  width: 80rpx;
+  height: 80rpx;
+}
+.img image {
+  width: 90%;
+  border-radius: 12rpx;
+}
+.shop-status {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.shop-status .status {
+  font-size: 30rpx;
+  color: #101010;
+}
+
+.shop-status .time {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.consult .shop-owner .remarks {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #666;
+  border-top: 1rpx solid #F3F4F8;
+  padding-top: 20rpx;
+}
+.consult .user {
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 20rpx;
+  margin-top: 20rpx;
+}
+.consult .user .portrait {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.consult .user .portrait .ima {
+  flex: 1;
+  width: 80rpx;
+  height: 80rpx;
+
+}
+.consult .user .portrait .ima image {
+  width: 90%;
+  border-radius: 12rpx;
+}
+.consult .user .portrait .time {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.consult .user .portrait .time .price {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #000;
+}
+.consult .user .portrait .time text {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #999;
+}
+.consult .user .details {
+  font-size: 26rpx;
+  color: #666;
+  border-top: 1rpx solid #F3F4F8;
+  padding-top: 10rpx;
+}
+.consult .user .details .timk {
+  margin: 12rpx 0;
+}

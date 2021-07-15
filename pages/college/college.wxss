@@ -1,0 +1,28 @@
+page {
+   background-color: #F3F4F8;
+  width: 100vw;
+  padding: 24rpx 36rpx;
+  box-sizing: border-box;
+}
+.van-cell {
+   margin: 40rpx 0;
+   border-radius: 20rpx;
+   align-items: center;
+}
+.van-icon--image  {
+   width: 58rpx;
+   height: 58rpx;
+}
+.van-icon, .van-icon:before {
+   display: felx;
+}
+.van-cell__left-icon, .van-cell__right-icon {
+   line-height: 58rpx;
+}
+.van-icon__image {
+   width: 58rpx;
+   height: 58rpx;
+}
+.van-cell__title {
+   font-size: 32rpx;
+}

@@ -1,0 +1,216 @@
+@import '/style/nodata.wxss';
+page {
+  min-height: 100%;
+  background-color: #F3F4F8;
+}
+
+
+.no-more {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.shop_contain {
+  width: 96%;
+  box-sizing: border-box;
+  background: #fff;
+  margin-left: 2%;
+  margin-top: 16rpx;
+  border-radius: 26rpx;
+}
+
+.shop_contain .shop_center {
+  display: flex;
+  padding: 20rpx;
+}
+
+.shop_contain .shop_center .shop_left {
+  width: 200prx;
+  display: flex;
+}
+
+.shop_contain .shop_center .shop_left image {
+  width: 158rpx;
+  height: 158rpx;
+  margin-right: 33rpx;
+  border-radius: 16rpx;
+}
+
+.shop_contain .shop_center .shop_right {
+  width: 550rpx;
+}
+
+.shop_contain .shop_center .shop_right {
+  box-sizing: border-box;
+  color: #333333;
+}
+
+.shop_contain .shop_center .shop_right .title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  line-height: 30rpx;
+}
+
+.shop_contain .shop_center .shop_right .star_distance {
+  display: flex;
+  justify-content: space-between;
+  line-height: 48rpx;
+}
+
+.shop_contain .shop_center .shop_right .star_distance .star {
+  width: 180rpx;
+  display: flex;
+  align-items: center;
+}
+
+.shop_contain .shop_center .shop_right .star_distance .star .iconfont {
+  color: #e54148;
+  font-size: 22rpx;
+}
+
+.shop_contain .shop_center .shop_right .star_distance .star text {
+  font-size: 24rpx;
+  margin-left: 10rpx;
+}
+
+.shop_contain .shop_center .shop_right .star_distance .distance {
+  font-size: 24rpx;
+  color: #333;
+  display: flex;
+}
+
+.shop_contain .shop_center .shop_right .star_distance .distance1 {
+  font-size: 24rpx;
+  color: #333;
+  display: flex;
+}
+
+.shop_contain .shop_center .shop_right .star_distance .distance text {
+  color: #999999;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.shop_contain .shop_center .shop_right .more {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28rpx;
+}
+
+.shop_contain .shop_center .shop_right .label .name {
+  background: #FFF8F8;
+  border: 1px solid #F0878B;
+  color: #E54148;
+  margin: 0rpx 30rpx 0rpx 0rpx;
+  font-size: 24rpx;
+  border-radius: 20rpx;
+  padding: 4rpx 16rpx 4rpx 16rpx;
+}
+
+.shop_contain .shop_center .shop_right .list_flex {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.shop_contain .shop_center .shop_right .list_flex .shop_list {
+  width: 168rpx;
+  height: auto;
+  display: inline-grid;
+  margin-right: 8rpx;
+}
+
+.shop_contain .shop_center .shop_right .list_flex .shop_list image {
+  width: 100%;
+  height: 148rpx;
+}
+
+.shop_contain .shop_center .shop_right .list_flex .shop_list .describe {
+  font-size: 24rpx;
+  color: #666;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 48rpx;
+}
+
+.shop_contain .shop_center .shop_right .list_flex .shop_list .describe {
+  font-size: 24rpx;
+  color: #333333;
+}
+
+.shop_contain .shop_center .shop_right .list_flex .shop_list .icon {
+  font-size: 24rpx;
+  color: #E54148;
+}
+
+.shop_contain .shop_center .shop_right .list_flex .shop_list .mon {
+  font-size: 24rpx;
+  color: #E54148;
+}
+
+.shop_contain .shop_center .shop_right .more .more_left {
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.shop_contain .shop_center .shop_right .more .more_left text {
+  display: inviewne-block;
+  padding: 0rpx 15rpx;
+  background: #f5f5f9;
+  border-radius: 5rpx;
+  margin-right: 10rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+}
+
+.shop_contain .shop_center .shop_right .more .more_right {
+  font-size: 24rpx;
+  font-weight: normal;
+}
+
+.goods-box .navi-url .goods-info .price-container .retail-price {
+  font-size: 18rpx;
+  color: #000;
+  margin-bottom: 4rpx;
+}
+
+.no-goods-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 338rpx;
+  height: 338rpx;
+  background: #000;
+  opacity: 0.3;
+}
+
+.sold-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 338rpx;
+  height: 338rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.soldout {
+  height: 180rpx;
+  width: 180rpx;
+}

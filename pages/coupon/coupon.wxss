@@ -1,0 +1,164 @@
+@import '/style/nodata.wxss';
+page {
+   background: #F3F4F8;
+}
+
+.box {
+   margin-top: 20rpx;
+   background: #fff;
+   width: 96%;
+   margin-left: 2%;
+   border-radius: 20rpx;
+}
+
+.pad {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   height: 180rpx;
+}
+
+.hui {
+   -webkit-filter: grayscale(100%);
+   filter: grayscale(100%);
+}
+
+.red {
+   width: auto;
+}
+
+.box .left {
+   flex: 3;
+   margin-right: 10rpx;
+}
+
+.box .center {
+   flex: 7;
+   padding: 54rpx 0;
+}
+.center1 {
+   flex: 7;
+   padding: 24rpx 0;
+}
+
+.box .line {
+   display: flex;
+   align-items: center;
+}
+.van-divider {
+	border: 1rpx solid #de464c;
+}
+
+.box .right {
+   flex: 3;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.box .left .flex1 {
+   border-radius: 20rpx 0 20rpx 0;
+   background-color: #FFEBED;
+   padding: 0 14rpx;
+}
+
+.flex1 text {
+   font-size: 24rpx;
+   color: #e54148;
+}
+
+.box .left .flex2 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #e54148;
+   line-height: 88rpx;
+}
+
+.flex2 text {
+   font-size: 58rpx;
+}
+
+.flex2 image {
+   width: 92rpx;
+   height: 92rpx;
+   margin: 12rpx;
+   border-radius: 14rpx;
+}
+
+.box .left .flex3 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.flex3 text {
+   font-size: 22rpx;
+}
+
+.box .center .block1 {
+   display: block;
+}
+.center1 .block1 {
+   display: block;
+}
+.block1 text {
+   font-size: 30rpx;
+   color: #333;
+}
+
+.box .center .block2 {
+   display: block;
+}
+
+.block2 text {
+   font-size: 20rpx;
+   color: #666;
+}
+
+.box .center .block3 {
+   display: block;
+}
+
+.block3 .first {
+   font-size: 30rpx;
+   color: #e54148;
+}
+
+.block3 .second {
+   font-size: 40rpx;
+   color: #e54148;
+   margin: 0 4rpx;
+}
+
+.block3 .three {
+   font-size: 24rpx;
+   color: #333333;
+   margin: 0 4rpx;
+}
+
+.box .right .use {
+   background: #e54148;
+   padding: 0 28rpx;
+   line-height: 44rpx;
+   border-radius: 8rpx;
+   padding-bottom: 2rpx;
+}
+.right .overdue {
+   height: 108rpx;
+   width: 108rpx
+}
+
+.right .overdue text {
+   font-size: 88rpx;
+}
+
+.overdue .iconfont {
+   color: #999999;
+}
+
+.use text {
+   font-size: 24rpx;
+   color: #fff;
+   text-align: center;
+}

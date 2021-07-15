@@ -1,0 +1,18 @@
+{
+  "name": "b2c",
+  "version": "1.0.26",
+  "description": "智超商互通",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/mcwenzai/b2c.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.6.8"
+  }
+}

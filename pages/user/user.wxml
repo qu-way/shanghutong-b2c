@@ -1,0 +1,127 @@
+<view class="pb">
+  <view class="personal">
+    <view class="basicInform">
+      <image class="back-img" src="{{common_header_backgroundimage?common_header_backgroundimage:'../../images/top_background.png'}}" ></image>
+      <view class="personalCon">
+        <view class="userInfo">
+          <block wx:if="{{token}}">
+            <image class="userAvatarUrl" bindtap="goLink2" data-link="/pages/user_setup/index" src="{{avatar}}" mode="widthFix"></image>
+            <view class="login-btn">{{nickName}}</view>
+          </block>
+          <block wx:else>
+            <image class="userAvatarUrl" bindtap="goLink2" data-link="/pages/login/login" src="../../images/avatar.png" mode="aspectFill"></image>
+            <view >
+              <navigator hover-class="none" url="/pages/login/login">
+                <text class="login-btn">登录/注册</text>
+              </navigator>
+            </view>
+          </block>
+          <view class="fetch-coder" bindtap="goLink2" data-link="/pages/user_setup/index">
+            <text class="iconfont icon-shezhi"></text>
+          </view>
+        </view>
+        <view class="gold i-flex-spb">
+          <view class="gold-coin" bindtap="goLink2" data-link="/pages/goldcoin/goldcoin">
+            <text class="currency-num" wx:if="{{token!==''}}">{{numInfo.coinNum}}</text>
+            <text class="currency-num" wx:else>0</text>
+            <view class="block">
+              <text class="company">币</text>
+              <text class="iconfont icon-gengduo1"></text>
+            </view>
+          </view>
+          <view class="center"></view>
+          <view class="gold-coin" bindtap="goLink2" data-link="/pages/coupon/coupon">
+            <text class="currency-num" wx:if="{{token!==''}}">{{numInfo.couponNum}}</text>
+            <text class="currency-num" wx:else>0</text>
+            <view class="block">
+              <text class="company">优惠券</text>
+              <text class="iconfont icon-gengduo1"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 我的全部订单 -->
+    <view class="order">
+      <view class="my-order">
+        <view class="my-order-title">
+          <text>我的订单</text>
+        </view>
+        <view bindtap="goLink2" class="to-order" data-link="/pages/order/order">
+          <text>查看全部订单</text>
+          <text class="iconfont icon-gengduo1"></text>
+        </view>
+      </view>
+      <view class="orderTab">
+        <view bindtap="goLink2" class="order_status" data-link="/pages/order/order?status=0">
+          <text class="num" wx:if="{{token!==''}}">{{numInfo.waitPayOrderNum}}</text>
+          <text class="num" wx:else></text>
+          <image class="icon-img" src="{{user_order_menu_icons.i1 ? user_order_menu_icons.i1 : '../../images/daizhifu.png'}}" mode="widthFix"></image>
+          <text style="color: #444;">待支付</text>
+        </view>
+        <view bindtap="goLink2" class="order_status" data-link="/pages/order/order?status=1">
+          <text class="num" wx:if="{{token!==''}}">{{numInfo.waitDeliverOrderNum}}</text>
+          <text class="num" wx:else></text>
+          <image class="icon-img" src="{{user_order_menu_icons.i2 ? user_order_menu_icons.i2 : '../../images/daifahuo.png'}}"></image>
+          <text style="color: #444;">待发货</text>
+        </view>
+        <view bindtap="goLink2" class="order_status" data-link="/pages/order/order?status=2">
+          <text class="num" wx:if="{{token!==''}}">{{numInfo.waitReceiveOrderNum}}</text>
+          <text class="num" wx:else></text>
+          <image class="icon-img" src="../../images/daishouhuo.png"></image>
+          <text style="color: #444;">待收货</text>
+        </view>
+        <view bindtap="goLink2" class="order_status" data-link="/pages/order/order?status=10">
+          <text class="num" wx:if="{{token!==''}}">{{numInfo.waitCommentOrderNum}}</text>
+          <text class="num" wx:else></text>
+          <image class="icon-img" src="{{user_order_menu_icons.i4 ? user_order_menu_icons.i4 : '../../images/daipingjia.png'}}"></image>
+          <text style="color: #444;">待评价</text>
+        </view>
+
+        <view bindtap="goLink2" class="order_status" data-link="/pages/refund/refund">
+          <text class="num" wx:if="{{token!==''}}">{{numInfo.changeAndRefundOrderNum}}</text>
+          <text class="num" wx:else></text>
+          <!-- <span class="weui-badge">8</span> -->
+          <image class="icon-img" src="{{user_order_menu_icons.i5 ? user_order_menu_icons.i5 : '../../images/tuikuan.png'}}"></image>
+          <text style="color: #444;">售后/退款</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="tool">
+        <view class="my-tool">
+        <view class="my-order-title">
+          <text>常见工具</text>
+        </view>
+      </view>
+      <view class="toolTab">
+        <view class="item-main" bindtap="goLink2" data-link="/pages/place/placeList/placeList">
+          <image src="../../images/dizhi.png"></image>
+          <text>收货地址</text>
+        </view>
+        <button class="item-main" open-type="contact" bindcontact="handleContact">
+          <image src="../../images/kefu.png"></image>
+          <text>联系客服</text>
+        </button>
+        <!-- </button> -->
+
+        <view class="item-main" bindtap='goDistribution' bindtap="goLink2" data-link="/pages/collection/collection">
+          <image src="../../images/shoucang.png"></image>
+          <text>我的收藏</text>
+        </view>
+        <view class="item-main" bindtap="goLink2" data-link="/pages/attention/attention">
+          <image src="../../images/dianpu.png"></image>
+          <text>店铺关注</text>
+        </view>
+        <view class="item-main" bindtap="goLink2" data-link="/pages/college/college">
+          <image src="../../images/shangxueyuan.png"></image>
+          <text>商学院</text>
+        </view>
+        <view class="item-main" bindtap="goLink2" data-link="/pages/noticeList/noticeList">
+          <image src="../../images/gonggao.png"></image>
+          <text>公告通知</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

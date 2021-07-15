@@ -1,0 +1,74 @@
+<block wx:if="{{isLogin && cartsList.length!==0}}">
+	<!-- 购物车顶部 -->
+	<view class="cart-top-wrap">
+		<view class="cart-left-wrap">
+			<text class="iconfont icon-shangpin"></text>
+			<text class="cart-all-goods">共{{allGoodsNums}}件商品</text>
+		</view>
+		<view class="cart-right-wrap">
+			<text class="cart-edit-btn" bindtap="handleChangeEditState">{{editState ? '取消' : '编辑'}}</text>
+		</view>
+	</view>
+	<!-- 购物车列表 -->
+	<view class="cart-goods-wrap">
+		<view class="cart-goods-item" wx:for="{{cartsList}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
+			<view class="cart-shop-row">
+				<checkbox-group bindchange="handleChangeShopGoods" data-info="{{item1}}" data-index="{{index1}}">
+					<checkbox value="checked" checked="{{item1.shopChecked}}" color="#E54148"></checkbox>
+				</checkbox-group>
+				<view class="cart-shop-name" wx:if="{{item.storeName != ''}}">{{item1.storeName}}</view>
+				<text class="iconfont icon-gengduo1"></text>
+			</view>
+			<view class="cart-item-wrap">
+				<view class="goods-cart-item" wx:for="{{item1.goodsList}}" wx:for-item="item2" wx:for-index="index2"
+					wx:key="index2">
+					<checkbox-group bindchange="handleChangeGoods" data-info="{{item2}}" data-index="{{index2}}"
+						data-select-index="{{index1}}">
+						<checkbox color="#E54148" value="checked" checked="{{item2.checked}}"></checkbox>
+					</checkbox-group>
+					<image mode="aspectFill" src="{{item2.cover}}?x-oss-process=image/resize,w_120"></image>
+					<view class="item-goods-detail">
+						<view class="item-goods-name">{{item2.goodsName}}</view>
+						<view class="item-goods-weight">{{item2.goodsSpecificationName}}</view>
+						<view class="item-goods-property">
+							<view class="item-goods-price">￥{{item2.price}}</view>
+							<view class="item-goods-nums-wrap">
+								<text class="item-goods-del" bindtap="handleaddEditGoodsNums" data-select-index="{{index1}}"
+									data-operation="{{-1}}" data-index="{{index2}}">-</text>
+								<text class="item-goods-nums">{{item2.buyNum}}</text>
+								<text class="item-goods-add" bindtap="handleminusEditGoodsNums" data-select-index="{{index1}}"
+									data-operation="{{1}}" data-index="{{index2}}">+</text>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 购物车底部 -->
+	<view class="cart-bottom-wrap">
+		<view class="cart-operation-wrap">
+			<checkbox-group bindchange="handleChooseAllShopGoods" data-index="{{index}}">
+				<checkbox color="#E54148" checked="{{allGoodsChecked}}" value="checked"></checkbox>
+			</checkbox-group>
+			<text class="cart-all-checked">全选</text>
+		</view>
+		<view class="cart-sum-wrap">
+			<text wx:if="{{!editState}}" class="cart-all-price">合计：￥{{totalPrice}}</text>
+			<button class="cart-to-pay {{checkedList.length > 0 ? 'cart-more-checked ' : 'cart-none-checked '}}"
+				bindtap="handleOperateGoods">{{editState ? '删除' : '去结算'}}({{goodsNums}})</button>
+		</view>
+	</view>
+</block>
+
+<!-- 未登录或购物车为空场景 -->
+<block wx:elif="{{!isLogin || cartsList.length==0}}">
+	<view class="empty">
+      <image src="{{!isLogin ? '../../images/noLogin.png' : '../../images/notshop.png'}}"></image>
+		<text>{{!isLogin ? '您还没有登录哦~' : '购物车里还没有宝贝'}}</text>
+		<view class="no-auth-btn" bindtap="handelAuth">
+			{{!isLogin ? '去登录' : '去购物'}}
+		</view>
+    </view>
+</block>

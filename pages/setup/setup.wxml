@@ -1,0 +1,25 @@
+<view class='container'>
+
+<view class='my_list code'>
+  <view class='cortlTel' bindtap='toPassWord'>
+    <view class='list_part'>
+      <text>关于我们</text>
+      <text class="iconfont icon-gengduo1"></text>
+    </view>
+  </view>
+</view>
+
+<view class='my_list'>
+  <view class='cortlTel' bindtap='toPassWord'>
+    <view class='list_part'>
+      <text class="list_left">当前版本</text>
+      <text class="list_version">当前版本1.0.0</text>
+    </view>
+  </view>
+</view>
+<!-- 退出登陆 -->
+<view >
+  <button class='bottom_box' bindtap="outsign">退出登陆</button>
+</view>
+</view>
+

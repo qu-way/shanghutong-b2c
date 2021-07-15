@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "购物车",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "van-skeleton": "@vant/weapp/skeleton/index"
+  }
+}

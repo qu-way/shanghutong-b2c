@@ -1,0 +1,15 @@
+page {
+   background-color: #F3F4F8;
+   width: 100vw;
+   padding: 20rpx;
+   box-sizing: border-box;
+ }
+
+ .line {
+    margin-bottom: 24rpx;
+    margin-top: 10rpx;
+ }
+
+ .van-cell {
+   border-radius: 8rpx;
+}

@@ -1,0 +1,163 @@
+page {
+  background: #F3F4F8;
+}
+.personal {
+  width: 100%;
+  height: -webkit-fill-available;
+  overflow: hidden;
+}
+
+.personal .basicInform {
+  width: 100%;
+  height: 480rpx;
+}
+
+.personal .basicInform .back-img {
+  width: 100%;
+  height: 480rpx;
+}
+
+.personal .basicInform .modify {
+  width: 34rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.personal .basicInform .modify::after {
+  border: none;
+}
+
+
+.personal .basicInform .personalCon {
+  width: 100%;
+  padding-top: 30rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.currency {
+  margin: 40rpx 20rpx 0 20rpx;
+  height: 651rpx;
+  border-radius: 32rpx;
+  padding: 32rpx 42rpx 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.currency .currency-block {
+  position: fixed;
+  align-items: center;
+  width: 600rpx;
+}
+/* .currency .detailed {
+  position: fixed;
+  right: 48rpx;
+  width: 160rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #F3F4F8;
+  border-radius: 24rpx;
+  font-size: 22rpx;
+  color: #777777;
+  font-weight: bold;
+}
+.currency .detailed .iconfont{
+  color: #777777;
+} */
+
+
+.currency .currency-block .first{
+  display: flex;
+  justify-content: center;
+  line-height: 92rpx;
+}
+
+.currency .currency-block .currency-available {
+  margin-top: 30rpx;
+  color: #272727;
+  font-size: 32rpx;
+}
+
+.currency .currency-block .currency-num {
+  color: #E54148;
+  font-size: 30rpx;
+}
+
+.currency .currency-block .block {
+  display: flex;
+  justify-content: center;
+}
+
+.block .company {
+  color: #E54148;
+  font-size: 62rpx;
+}
+
+.currency .currency-block .deduction {
+  margin: 20rpx 0 80rpx 0;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+.currency .currency-block .deduction .box1 {
+  background: #f5f5f5;
+  padding: 12rpx 60rpx;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: 28rpx;
+}
+
+.currency .currency-block .deduction .box1 .written {
+  color: #444444;
+}
+
+.currency .currency-block .use {
+  line-height: 120rpx;
+}
+
+.use .btn {
+  background-color: #E54148;
+  border-radius: 40rpx;
+  color: #ffffff;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+
+.currency .currency-block .coupon {
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  color: #333333;
+  margin-top: 40rpx;
+}
+
+.currency .currency-block .coupon-text {
+  color: #333333;
+  padding: 0rpx 4rpx;
+  text-align: center;
+}
+
+.currency .currency-block .red {
+  padding: 0rpx 4rpx;
+  color: #E54148;
+  text-align: center;
+}
+
+.currency .currency-block .iconfont {
+  font-size: 36rpx;
+  font-weight: 500;
+}

@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "收货地址",
+   "component": true,
+   "usingComponents": {
+     "mp-toptips": "../../../components/toptips/toptips",
+     "mp-cells": "../../../components/cells/cells",
+     "mp-cell": "../../../components/cell1/cell",
+     "mp-checkbox": "../../../components/checkbox/checkbox",
+     "mp-checkbox-group": "../../../components/checkbox-group/checkbox-group",
+     "mp-form": "../../../components/form/form",
+     "van-notify": "@vant/weapp/notify/index"
+   }
+ }

@@ -1,0 +1,7 @@
+<!--pages/college/college.wxml-->
+
+<van-cell-group >
+  <view wx:for="{{collegeData}}" wx:key="college">
+  <van-cell icon="/images/bixiu.png" title="{{item.categoryName}}" value="内容" link-type="navigateTo" url="/pages/media/media?categoryName={{item.categoryName}}" is-link/>
+</view>
+</van-cell-group>

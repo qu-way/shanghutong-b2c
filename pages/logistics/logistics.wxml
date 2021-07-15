@@ -1,0 +1,35 @@
+<view class="container">
+   <view class="card" >
+      <view class="card-header" slot="header">
+        <view class="head">
+          <text class="title">{{storeName}}</text>
+          <text class="iconfont icon-gengduo1"></text>
+        </view>
+      </view>
+      <view class="card-content" slot="content" bindtap="goOrderDetail" data-order-id="{{i.orderId}}">
+        <view class="content-wrap">
+          <view class="flex-item">
+            <image height="60" src="{{goodsCover}}?x-oss-process=image/resize,w_120" iClass="show-img mar-right-10" lazyLoad="true"></image>
+          </view>
+          <view class="i-flex-item">
+            <view class="name bold">
+              {{goodsName}}
+            </view>
+            <view class="mount">{{goodsSpecificationName}}</view>
+            <!-- <view class="bottom-info">
+              <text>¥{{goodsPrice}}</text>
+              <text>x{{quantity}}</text>
+            </view>
+            <view class="bottom">
+              <text class="left">共{{quantity}}件商品</text>
+              合计：
+              <text class="right">￥{{goodsPrice}}</text>
+            </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="logistics">
+      <van-steps steps="{{ traceSteps }}" active="{{ active }}" direction="vertical" active-color="#ee0a24"></van-steps>
+    </view>
+</view>

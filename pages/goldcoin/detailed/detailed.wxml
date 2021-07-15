@@ -1,0 +1,32 @@
+<!--pages/goldcoin/detailed/detailed.wxml-->
+<view class="ba">
+   <view class="containe">
+      <view class="store">
+         <text class="title">百果园(长沙湘仪店)</text>
+         <text class="iconfont icon-gengduo1"></text>
+      </view>
+      <view class="shop">
+      <view class="left">
+         <image src="http://img.alicdn.com/bao/uploaded/i1/2208365721988/O1CN012p3f1B1QYXztAyLes_!!0-item_pic.jpg" mode=""></image>
+      </view>
+      <view class="right">
+         <view class="titl">
+            <text>【小份尝鲜】A级-红宝玉草莓（大）1份</text>
+         </view>
+         <view class="specification">
+            <text>180g</text>
+         </view>
+         <view class="bottom">
+            <view class="amount">
+            <text class="coin">付款金额</text>
+            <text class="num">￥43.9</text>
+         </view>
+         <view class="retu">
+            <text class="iconfont icon-fan1"></text>
+            <text class="tex">待返币14个</text>
+         </view>
+         </view>
+      </view>
+   </view>
+   </view>
+</view>

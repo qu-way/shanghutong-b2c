@@ -1,0 +1,21 @@
+page {
+   background-color: #F3F4F8;
+   width: 100vw;
+   padding: 20rpx;
+   box-sizing: border-box;
+ }
+
+ .detail {
+   background: #fff;
+   padding: 20rpx;
+ }
+
+ .detail .title {
+   font-size: 32rpx;
+   color: #333;
+}
+
+.detail .text {
+   font-size: 30rpx;
+   color: #444444;
+}

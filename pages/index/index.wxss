@@ -1,0 +1,537 @@
+page {
+  background: #F3F4F8;
+}
+
+/* 
+.container {
+  width: 96%;
+
+  margin-left: 2%;
+} */
+
+.indextip {
+  position: fixed;
+  right: 38rpx;
+  z-index: 9;
+  top: 14rpx;
+}
+
+.indextip .tip {
+  width: 400rpx;
+  background: #ffffff;
+  border-radius: 6rpx;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  border: 1rpx solid #e8e8e8;
+  box-shadow: 8rpx 7rpx 4rpx 0rpx rgba(195, 195, 195, 0.75);
+}
+
+.indextip .tip::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 15rpx solid transparent;
+  border-right: 15rpx solid transparent;
+  border-bottom: 17rpx solid #e8e8e8;
+  position: absolute;
+  top: -17rpx;
+  right: 95rpx;
+}
+
+.indextip .text {
+  font-size: 22rpx;
+  color: #333;
+  padding: 0rpx 32rpx 8rpx 10rpx;
+}
+
+.indextip .text .icon-xiaochengxu {
+  font-size: 32rpx;
+  display: inline-block;
+}
+
+.indextip .icon-guanbi1 {
+  color: #999999;
+  font-size: 32rpx;
+  position: absolute;
+}
+
+.header {
+  width: 94%;
+  height: 84rpx;
+  padding: 5rpx 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.header .position {
+  width: 152rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .position text {
+  font-size: 30rpx;
+}
+
+.header .position image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 10rpx;
+}
+
+.header .search_box {
+  background-color: #F3F4F8;
+  border-radius: 60rpx;
+  padding: 6rpx 100rpx;
+  color: #666;
+}
+
+.header .search_box .iconfont {
+  font-size: 34rpx;
+  margin-right: 16rpx;
+}
+
+.header .search_box .seach_text {
+  font-size: 30rpx;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.swiperCenter {
+  display: flex;
+  flex-direction: column;
+}
+
+.swiperCenter swiper {
+  width: 96%;
+  height: 300rpx;
+  margin-left: 2%;
+  border-radius: 40rpx;
+}
+
+.swiperCenter swiper swiper-item image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.menuBox {
+  width: 96%;
+  margin-left: 2%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  height: 220rpx;
+}
+
+.menuBox .menu {
+  width: 20%;
+  height: 170rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.menuBox .menu .list {
+  display: flow-root;
+  justify-content: center;
+}
+
+.menuBox .menu .list .menu_image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.menuBox .menu .list .menu_image image {
+  height: 100rpx;
+  width: 100rpx;
+  padding: 10rpx;
+}
+
+.menuBox .menu .list .menu_text {
+  width: 120rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.menuBox .menu .list .menu_text text {
+  font-size: 26rpx;
+  color: #444444;
+}
+
+.iconviewst {
+  width: 94%;
+  height: 145rpx;
+  padding: 26rpx 3%;
+  background: #fff;
+}
+
+.iconviewst swiper-item {
+  height: 110rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sw-item {
+  height: 110rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconviewst swiper-item view {
+  width: 92rpx;
+  height: 100%;
+}
+
+.iconviewst swiper-item view image {
+  display: block;
+  width: 100%;
+  height: 92rpx;
+}
+
+.iconviewst swiper-item view text {
+  font-size: 24rpx;
+}
+
+.iconviewst swiper-item view.active image {
+  padding: 3rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+/* .iconviewst swiper-item view.active text {
+  color: #e54148;
+} */
+.iconviewst swiper-item view text {
+  display: block;
+  text-align: center;
+  margin-top: 10rpx;
+  color: #333;
+  font-size: 23rpx;
+}
+
+.nearStore {
+  padding: 30rpx 0 20rpx 20rpx;
+  background: #F3F4F8;
+  color: #333;
+  font-size: 34rpx;
+}
+
+.select_container {
+  width: 100%;
+  background: #F3F4F8;
+  height: 90rpx;
+}
+
+.select_container .selec_center {
+  width: 98%;
+  height: 100%;
+  margin-left: 2%;
+  box-sizing: border-box;
+}
+
+.select_container .selec_center view {
+  width: 98%;
+  height: 100%;
+  padding-right: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.select_container .selec_center view view {
+  font-size: 26rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select_container .selec_center view .screenList {
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 14rpx;
+  height: 60rpx;
+  width: 156rpx;
+}
+
+.select_container .selec_center view view span {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 8rpx solid transparent;
+  border-right: 8rpx solid transparent;
+  border-top: 8rpx solid #888888;
+  margin-left: 10rpx;
+}
+
+.nearby {
+  width: 100%;
+  background: #fff;
+}
+
+.shop_background {
+  padding: 20rpx;
+}
+
+.shop_background .shop_contain {
+  margin-bottom: 20rpx;
+}
+
+.shop_center {
+  margin: 20rpx 0;
+}
+
+.bl {
+  background: #ffffff;
+  border-radius: 26rpx;
+  padding: 20rpx 20rpx 10rpx 20rpx;
+}
+
+.cont {
+  display: flex;
+}
+
+.shop_left {
+  display: flex;
+  flex: 7;
+}
+
+.shop_left .logo {
+  margin-right: 30rpx;
+}
+
+.shop_left .logo image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+}
+
+
+.shop_right {
+  box-sizing: border-box;
+  color: #333333;
+  flex: 1;
+}
+
+.shop_left .label {
+  display: flex;
+  line-height: 32rpx;
+}
+
+.shop_left .title {
+  font-size: 32rpx;
+  color: #2f2f2f;
+  overflow: hidden;
+  text-overflow: inherit;
+}
+
+.shop_left .star_distance {
+  display: flex;
+  justify-content: space-between;
+  line-height: 50rpx;
+}
+
+.shop_left .star_distance .star {
+  width: 180rpx;
+  display: flex;
+  align-items: center;
+}
+
+.shop_left .star_distance .star .iconfont {
+  font-size: 23rpx;
+  color: #E54148;
+}
+
+.shop_left .star_distance .star .text {
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  color: #4d4d4d;
+}
+
+.shop_right .distance1 {
+  font-size: 24rpx;
+  color: #333;
+  display: flex;
+}
+
+.shop_right .distance {
+  font-size: 24rpx;
+  color: #777;
+  display: flex;
+  align-items: center;
+}
+
+.shop_right .distance .iconfont {
+  font-size: 24rpx;
+  color: #888888;
+}
+
+.shop_right .distance .text {
+  color: #888888;
+  text-align: center;
+  margin-top: 2rpx;
+  margin-left: 2rpx;
+}
+
+.shop_right .more {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28rpx;
+}
+
+.shop_left .label view .name {
+  background: #FFF8F8;
+  border: 1px solid #F0878B;
+  color: #E54148;
+  font-size: 22rpx;
+  border-radius: 19rpx;
+  padding: 2rpx 14rpx 2rpx 14rpx;
+  margin-right: 10rpx;
+}
+
+.goods {
+  display: flex;
+  overflow: hidden;
+}
+
+.goods .list_flex {
+  flex: 1;
+  justify-content: center;
+}
+
+.list_flex .shop_list {
+  height: 260rpx;
+  width: 230rpx;
+}
+
+.list_flex .shop_list image {
+  width: 214rpx;
+  height: 168rpx;
+  border-radius: 4rpx;
+}
+
+.list_flex .shop_list .describe {
+  font-size: 28rpx;
+  color: #666;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 214rpx;
+}
+
+.list_flex .shop_list .icon {
+  font-size: 28rpx;
+  color: #E54148;
+}
+
+
+.list_flex .shop_list .mon {
+  font-size: 24rpx;
+  color: #E54148;
+}
+
+.shop_right .more .more_left {
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.shop_right .more .more_left text {
+  display: inviewne-block;
+  padding: 0rpx 15rpx;
+  background: #f5f5f9;
+  border-radius: 5rpx;
+  margin-right: 10rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+}
+
+.shop_right .more .more_right {
+  font-size: 24rpx;
+  font-weight: normal;
+}
+
+.empty {
+  margin-top: 40rpx;
+  width: 100%;
+  height: 300rpx;
+  padding: 50rpx 0;
+}
+
+.empty image {
+  display: block;
+  width: 260rpx;
+  height: 200rpx;
+  margin: 20rpx auto;
+}
+
+.empty text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.sign_btn {
+  display: block;
+  width: 130rpx;
+  height: 130rpx;
+  position: fixed;
+  bottom: 167rpx;
+  right: 9rpx;
+}
+
+.news {
+  background: #fff;
+  height: 72rpx;
+  border-top: 1rpx solid #f4f4f4;
+  padding: 0 30rpx;
+  box-shadow: 0 10rpx 30rpx #f5f5f5;
+}
+
+.news .swiperTxt {
+  height: 100%;
+  line-height: 72rpx;
+  overflow: hidden;
+}
+.news .swiperTxt .flex {
+  display: flex;
+  justify-content: space-between;
+  line-height: 72rpx;
+  height: 72rpx;
+}
+
+.news .swiperTxt .flex .icon {
+  font-size: 30rpx;
+}
+
+.news .text {
+  display: flex;
+  align-items: center;
+}
+
+.news .swiperTxt .flex .icon {
+  float: right;
+  height: 136rpx;
+}
+
+.news .text image {
+  width: 76rpx;
+  height: 36rpx;
+}
+
+.news .text .newsTitle {
+  font-size: 30rpx;
+  color: #444444;
+}

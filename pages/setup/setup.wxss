@@ -1,0 +1,133 @@
+page{
+  background: #F3F4F8;
+}
+.container {
+  position: relative;
+  border-top: 2rpx solid #F3F4F8;
+  background-color: #F3F4F8;
+}
+.insert_img {
+  width: 100%;
+}
+.prop {
+  display: block;
+  width: 100%;
+  height: 68rpx;
+}
+
+.getcode2{
+  background:  #e54148 !important;
+}
+.my_list {
+  width: 100%;
+ background: #fff;
+}
+.code{
+  margin-bottom: 20rpx;
+}
+.my_list navigator,.my_list .cortlTel {
+  width: 95%;
+  height: 92rpx;
+  line-height: 92rpx;
+  margin-left: 5%;
+  padding-right: 5%;
+  box-sizing: border-box;
+}
+.cortlTel:last-of-type {
+  border: none;
+}
+.my_list navigator .list_part,.my_list .cortlTel .list_part{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.my_list .list_part:last-of-type {
+  border: none;
+}
+.my_list .list_part text {
+  color: #333333;
+  font-size: 28rpx;
+}
+
+.my_list .list_part .iconfont {
+  color: #888888;
+  font-size: 30rpx;
+}
+
+.my_list .list_part .list_left {
+  color: #333333;
+  font-size: 28rpx;
+}
+.my_list .list_part .list_right {
+  width: 152rpx;
+  height: 80rpx;
+}
+
+.my_list .list_part .list_version {
+  font-size: 26rpx;
+  color: #888888;
+}
+
+.my_list .list_part .list_right .right_view {
+  color: #E54148;
+  font-size: 26rpx;
+  border: 2rpx solid #E54148;
+  border-radius: 32rpx;
+  padding: 2rpx 16rpx;
+}
+
+.my_list .list_part image {
+  width: 15rpx;
+  height: 30rpx;
+}
+
+.my_list .list_part .left {
+  display: flex;
+}
+
+.my_list .list_part .left .avatar {
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 38rpx;
+}
+
+.my_list .list_part .left .name {
+  font-size: 28rpx;
+  align-items: center;
+  margin-left: 10rpx;
+}
+
+.bottom_box {
+  margin-top: 100rpx;
+  width: 76%;
+  color: #ffffff;
+  background: linear-gradient(to right, #e44158, #e54148);
+  border-radius: 50rpx; 
+}
+
+.key_container{
+  display: block;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.mask .content{
+  width:95%;
+  height:50%; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display:inline-block;
+  background-color: #fff;
+}

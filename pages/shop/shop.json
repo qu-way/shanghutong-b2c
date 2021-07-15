@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor": "#303030",
+  "navigationBarTitleText": "商家主页",
+  "navigationBarTextStyle": "white",
+  "component": true,
+  "usingComponents": {
+    "mp-dialog": "/components/dialog/dialog",
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-divider": "@vant/weapp/divider/index"
+  }
+}

@@ -1,0 +1,38 @@
+.current {
+  width: 100%;
+  height: 160rpx;
+}
+.current .curCity{
+  width: 142rpx;
+  height: 60rpx;
+  background: #ffffff;
+  border: 2rpx solid #cccccc;
+  border-radius: 12rpx;
+  margin-left: 36rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.current .curCity .iconfont{
+  font-size: 30rpx;
+  color: #e54148;
+}
+.current .curCity .my-curCity{
+  font-size: 28rpx;
+  color: #000;
+  margin-left: 6rpx;
+  margin-top: 2rpx;
+}
+.current .curCity .my-curCity-state{
+  font-size: 26rpx;
+  color:#888;
+  padding: 0rpx 0rpx 0rpx 10rpx;
+}
+.division {
+  border-top: 1rpx solid #ececec;
+}
+.opencity-common {
+  font-size: 28rpx;
+  color: #666;
+  padding: 0 0 0 36rpx;
+}

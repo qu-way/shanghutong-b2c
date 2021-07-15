@@ -1,0 +1,46 @@
+<view class="after-sales">
+  <view class="afterlist">
+    <view class="shop">
+      <view class="shop-name">
+        <text>百果园(长沙湘仪店)</text>
+        <image src="/images/rightArrowImg.png"></image>
+      </view>
+      <text class="shop-status">退货退款处理中</text>
+    </view>
+    <view class="commodity">
+      <view class="img">
+        <image mode="widthFix" src="/images/iphone12.jpg"></image>
+      </view>
+      <view class="commoditylist">
+        <view class="commodity-name">【小份尝鲜】A级-红宝玉草莓（大）1份120g/180g，先到先得</view>
+        <view class="commodity-weight">180g</view>
+        <view class="commodity-price">
+          <text>￥30.8</text>
+          <text class="quantity">x2</text>
+        </view>
+      </view>
+    </view>
+    <view class="amount">
+      <view class="payment">
+        <text>实付款：</text>
+        <text class="payment-price">￥61.6</text>
+      </view>
+      <view class="refund">
+        <text>退款金额：</text>
+        <text class="refund-price">￥61.6</text>
+      </view>
+    </view>
+    <view class="operation">
+      <view class="delete" bindtap="delete">
+        <text>删除</text>
+        <showBtn id="showBtn" bind:error="onCancel" bind:success="onConfirm"></showBtn>
+      </view>
+      <view class="sales">
+        <navigator url="./refunds/refunds">售后详情</navigator>
+      </view>
+      <view class="sales">
+        <navigator url="./moneyGoing/moneyGoing">钱款去向</navigator>
+      </view>
+    </view>
+  </view>
+</view>

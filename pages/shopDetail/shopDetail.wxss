@@ -1,0 +1,224 @@
+.container {
+  background: #f5f5f9;
+}
+
+.my_list {
+  width: 100%;
+  background: #ffffff;
+  color: #333333;
+}
+
+.my_list .my_list .cortlTel {
+  width: 95%;
+  height: 92rpx;
+  line-height: 92rpx;
+  margin-left: 5%;
+  padding-right: 5%;
+  box-sizing: border-box;
+}
+
+.cortlTel:last-of-type {
+  border: none;
+}
+
+.my_list .list_part,
+.my_list .cortlTel .list_part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.my_list .list_part:last-of-type {
+  border: none;
+  padding: 10rpx 34rpx 20rpx 34rpx;
+}
+
+.my_list .list_part text {
+  color: #333333;
+  font-size: 28rpx;
+}
+
+.my_list .list_part .list_left {
+  color: #333333;
+  font-size: 28rpx;
+}
+
+
+.my_list .list_part image {
+  width: 15rpx;
+  height: 30rpx;
+}
+
+.my_list .list_part .left {
+  display: flex;
+  align-items: center;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.my_list .list_part .shop-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  background: #ff5757;
+  height: 40rpx;
+  width: 80rpx;
+  border-radius: 20rpx;
+  color: #ffffff;
+  padding: 2rpx 4rpx;
+}
+
+.my_list .list_part .left .avatar {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 12rpx;
+}
+
+.my_list .list_part .left .name {
+  font-size: 32rpx;
+  align-items: center;
+  margin-left: 10rpx;
+}
+
+.address-line {
+  width: 100%;
+  background: #ffffff;
+  margin-top: 20rpx;
+}
+
+.address-line .address-box {
+  width: 92%;
+  display: flex;
+  align-items: center;
+  margin-left: 4%;
+  padding: 10rpx 0;
+}
+
+.address-line .address-box .center {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  flex:14;
+}
+
+.address-line .address-box .center .mar {
+  margin-left: 20rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.address-line .address-box text {
+  font-size: 28rpx;
+  color: #3e3e3e;
+}
+
+.address-line .address-box .iconfont {
+  font-size: 30rpx;
+}
+
+.icon-dianhua {
+  flex: 1;
+}
+
+.address-line .address-box .navigation {
+  background: #e2e2e2;
+  width: 58rpx;
+  padding: 2rpx 10rpx 2rpx 10rpx;
+  font-size: 20rpx;
+  color: #444040;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+}
+
+.shop_infomation {
+  margin-top: 20rpx;
+  background: #fff;
+  height: auto;
+}
+
+.shop_infomation .menu_title .menu_title_left image {
+  width: 67rpx;
+  height: 22rpx;
+  margin-left: 10rpx;
+}
+
+.shop_infomation .shop_infoList {
+  width: 92%;
+  margin-left: 4%;
+}
+
+.shop_infomation .shop_infoList .fixed {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+}
+
+.shop_infomation .shop_infoList .fixed .replaceable text {
+  padding: 4rpx 16rpx;
+  font-size: 22rpx;
+  color: #E54148;
+  border: 1rpx solid #e54148;
+  margin: 2rpx 18rpx;
+  border-radius: 8rpx;
+}
+
+.shop_infomation .shop_infoList .fixed .replaceable .none {
+  display: none;
+}
+
+.shop_infomation .shop_infoList view .iconfont {
+  margin-right: 20rpx;
+  font-size: 30rpx;
+}
+
+.shop_infomation .shop_infoList view .title {
+  color: #333333;
+  font-size: 30rpx;
+}
+
+.shop_infomation .shop_infoList view:last-of-type {
+  border: none;
+  margin: 0;
+}
+
+.promise {
+  width: 100%;
+  padding-left: 4%;
+  margin-top: 20rpx;
+  background: #fff;
+  display: flex;
+  padding-bottom: 50rpx;
+  padding-top: 10rpx;
+}
+
+.promise .left {
+  display: flex;
+  align-items: center;
+}
+
+.promise .left .iconfont {
+  font-size: 28rpx;
+}
+
+.promise .left .title {
+  font-size: 30rpx;
+  color: #333333;
+  margin-left: 15rpx;
+}
+
+.promise .right {
+  width: 100%;
+  align-items: center;
+  flex: 4;
+  background: #ffffff;
+  padding-right: 20rpx;
+}
+
+.promise .right text {
+  font-size: 26rpx;
+  color: #333333;
+  margin-left: 15rpx;
+}

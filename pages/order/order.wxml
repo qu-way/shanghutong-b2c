@@ -1,0 +1,112 @@
+<view>
+  <view class="nav-bar">
+    <view class="nav-bar-inner">
+      <view bindtap="getOrder" wx:for="{{tabs}}" wx:key="getOrder" class="nav-bar-item {{status==item.id?'current':''}}"
+        data-type="{{item.id}}" style="{{status===item.id}}">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+  <view class='nav-bar-content'>
+    <!-- 订单项目 -->
+    <block wx:if="{{orderList.length>0}}">
+      <view class="card" wx:for="{{orderList}}" wx:for-item="i" wx:for-index="index" wx:key="card">
+        <van-skeleton title row="3" loading="{{ loading }}"/>
+        <view wx:for="{{i.orderItems}}" wx:for-item="item" wx:if="{{index<1}}" wx:for-index="index" wx:key="li">
+          <view class="card-header" slot="header">
+            <view class="head">
+              <text class="title">{{item.storeName}}</text>
+              <text class="iconfont icon-gengduo1"></text>
+            </view>
+            <view class="bold {{item.status_id==3?'red':'gray'}}" style="{{tabs.id==3}}">
+              <text wx:if="{{item.status==0}}">待付款</text>
+              <text wx:if="{{item.status==1}}">待发货</text>
+              <text wx:if="{{item.status==2}}">待收货</text>
+              <text wx:if="{{item.status==10}}">待评价</text>
+              <!-- 待付款 -->
+            </view>
+          </view>
+        </view>
+        <view wx:for="{{i.orderItems}}" wx:for-item="item" wx:for-index="index" wx:key="orderItems">
+          <view class="card-content" slot="content" bindtap="goOrderDetail" data-order-id="{{i.orderId}}">
+            <view class="content-wrap">
+              <view class="flex-item">
+                <image height="60" src="{{item.merchantGoodsCover}}?x-oss-process=image/resize,w_120" iClass="show-img mar-right-10" lazyLoad="true"
+                loadImage="{{item.goods_list[0].merchantGoodsCover}}" width="60"></image>
+              </view>
+              <view class="i-flex-item">
+                <view class="name bold">
+                  {{item.merchantGoodsName}}
+                </view>
+                <view class="mount">{{item.merchantGoodsSpecName}}</view>
+                <view class="bottom-info">
+                  <text>¥{{item.merchantGoodsPrice}}</text>
+                  <text>x{{item.goodsNum}}</text>
+                </view>
+                <view class="bottom">
+                  <text class="left">共{{item.goodsNum}}件商品</text>
+                  合计：
+                  <text class="right">￥{{item.merchantGoodsPrice*item.goodsNum}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+          <view class="card-footer" slot="footer" wx:if="{{i.status===0}}">
+            <view class="button-group">
+              <view catchtap="cancelOrder" data-id="{{i.orderId}}" class="my-button" data-show="cancelVisible">
+                取消订单</view>
+              <view catchtap="orderPay" data-id="{{i.orderId}}" class="my-button-pay padding-15"
+                style="background: linear-gradient(90deg, {{skin.color}} 0%, {{skin.light}} 100%)">
+                立即支付
+              </view>
+            </view>
+            <!-- <view wx:if="{{item.status_id==4}}">
+              <view data-type="{{item.orderId}}" class="get-goods" data-delivery="{{item.delivery}}">
+                <view class="sure-get">{{item.delivery==="pickup"?"确认提货":"确认收货"}}</view>
+                <image class="right-arrow" src="../../images/rightArrowImg.png"></image>
+              </view>
+            </view>
+            <view wx:if="{{item.status_id===1||item.status_id===6||item.status_id===11||item.status_id===14}}">
+              <view data-type="{{item.order_id}}" class="my-button" size="small">查看详情</view>
+            </view> -->
+          </view>
+
+          <view class="card-footer" slot="footer" wx:if="{{i.status===1}}">
+            <view class="button-group">
+              <view catchtap="cancelOrder" data-id="{{i.orderId}}" class="my-button" data-show="cancelVisible">
+                取消订单</view>
+              <!-- <view catchtap="orderPay" data-id="{{i.orderId}}" class="my-button-hui padding-15"
+                style="background: linear-gradient(90deg, {{skin.color}} 0%, {{skin.light}} 100%)">
+                再次购买
+              </view> -->
+              <view catchtap="orderPay" data-id="{{i.orderId}}" class="my-button-hui padding-15"
+                style="background: linear-gradient(90deg, {{skin.color}} 0%, {{skin.light}} 100%)">
+                提醒发货
+              </view>
+            </view>
+          </view>
+
+          <view class="card-footer" slot="footer" wx:if="{{i.status===2}}" wx:for="{{i.orderItems}}" wx:for-item="item" wx:for-index="index" wx:key="orderItems">
+            <view class="button-group">
+              <view catchtap="goRefund" data-id="{{item.childOrderId}}" class="my-button">
+                申请退款</view>
+              <view catchtap="viewLogistics" data-id="{{item.childOrderId}}" class="my-button-hui padding-15"
+                style="background: linear-gradient(90deg, {{skin.color}} 0%, {{skin.light}} 100%)">
+                查看物流
+              </view>
+              <view catchtap="orderPay" data-id="{{item.childOrderId}}" class="my-button-pay padding-15"
+                style="background: linear-gradient(90deg, {{skin.color}} 0%, {{skin.light}} 100%)">
+                确认收货
+              </view>
+            </view>
+          </view>
+      </view>
+    </block>
+
+    <view class="empty" wx:else>
+      <image src="../../images/no-order.png"></image>
+      <text>暂无任何订单记录～</text>
+    </view>
+  </view>
+</view>

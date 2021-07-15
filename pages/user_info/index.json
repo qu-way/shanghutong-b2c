@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "van-uploader": "@vant/weapp/upload/index"
+  },
+  "navigationBarTextStyle": "black"
+}

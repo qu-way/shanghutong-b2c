@@ -1,0 +1,69 @@
+<view class="details">
+  <view class="refund">
+    <view class="refund-status">
+      <image mode="widthFix" src="/images/chenggong.png"></image>
+      <text>退款成功</text>
+    </view>
+    <view class="money">
+      <text>￥</text>
+      <text class="price">61.6</text>
+    </view>
+  </view>
+  <view class="consult">
+   <navigator url="./consult/consult">
+    <text>协商详情</text>
+    <image mode="widthFix" src="/images/rightArrowImg.png"></image>
+   </navigator>
+  </view>
+  <view class="order-status">
+    <view class="business">
+      <view class="left">
+        <image mode="widthFix" src="/images/shucai.png"></image>
+      <view class="shop">
+        <text class="title">百果园(长沙湘仪店)</text>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+      </view>
+      <view class="merchant">联系商家</view>
+    </view>
+    <view class="lineke"></view>
+    <view class="commodity">
+      <view class="img">
+        <image mode="widthFix" src="/images/iphone12.jpg"></image>
+      </view>
+      <view class="commoditylist">
+        <view class="commodity-name">小份尝鲜 A级-红宝玉草莓（大）1份120g/180g，先到先得</view>
+        <view class="commodity-weight">
+          <text>规格：</text>
+          <text>180g</text>
+        </view>
+      </view>
+      <view class="iconfont icon-gengduo"></view>
+    </view>
+    <view class="lineke"></view>
+    <view class="information">
+      <view class="number tice">
+        <view class="number-box">
+          <text>订单编号：</text>
+          <text>8759346730857</text>
+        </view>
+        <view class="copy" bindtap="copyOrderId">复制</view>
+      </view>
+      <view class="tice">
+        <text>退款金额：</text>
+        <text>￥61.6</text>
+      </view>
+      <view class="tice">
+        <text>退款原因：</text>
+        <text>拍错</text>
+      </view>
+      <view class="tice">
+        <text>申请时间：</text>
+        <text>2020.11.12 12:24:35</text>
+      </view>
+    </view>
+  </view>
+  <view class="moneys">
+    <view class="moneys-box">钱款去向</view>
+  </view>
+</view>

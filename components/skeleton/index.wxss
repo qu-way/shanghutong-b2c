@@ -1,0 +1,24 @@
+@keyframes shine {
+  from {
+      background-position: 0 0 ;
+  }
+  to {
+      background-position: 20rem 0;
+  }
+}
+.shine {
+  background: rgb(198, 216, 226);
+  background-image: linear-gradient(90deg,rgba(255, 255, 255, 0.15) 25%, transparent 25%);
+  background-size: 20rem 20rem;
+  animation: shine 1s linear infinite;
+}
+
+.wipe {
+  overflow: hidden;
+  margin: 0 auto;
+  display: inline-flex;
+  animation-name: wipe;
+}
+@keyframes wipe {
+  to { width: 0 }
+}

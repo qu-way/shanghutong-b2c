@@ -1,0 +1,91 @@
+{
+   "pages": [
+      "pages/index/index",
+      "pages/shopCart/shopCart",
+      "pages/shop/shop",
+      "pages/shopDetail/shopDetail",
+      "pages/switchcity/switchcity",
+      "pages/search/search",
+      "pages/searchs/searchs",
+      "pages/goldcoin/goldcoin",
+      "pages/coupon/coupon",
+      "pages/collection/collection",
+      "pages/place/place/add",
+      "pages/place/place/edit",
+      "pages/place/placeList/placeList",
+      "pages/details/details",
+      "pages/order/order",
+      "pages/login/login",
+      "pages/reviewlist/reviewlist",
+      "pages/review/review",
+      "pages/shopList/shopList",
+      "pages/codePay/codePay",
+      "pages/goldcoin/detailed/detailed",
+      "pages/orderDetail/orderDetail",
+      "pages/logistics/logistics",
+      "pages/refund/refund",
+      "pages/refund/applyRefund/applyRefund",
+      "pages/refund/refundDetail/refundDetail",
+      "pages/refund/moneyGoing/moneyGoing",
+      "pages/refund/consult/consult",
+      "pages/refund/refundState/refundState",
+      "pages/appPay/appPay",
+      "pages/user/user",
+      "pages/user_setup/index",
+      "pages/user_info/index",
+      "pages/user_phone/index",
+      "pages/user_edit/index",
+      "pages/user_sgin_list/index",
+      "pages/pays/pays",
+      "pages/noticeList/noticeList",
+      "pages/noticeDetails/noticeDetails",
+      "pages/college/college",
+      "pages/media/media",
+      "pages/video/video",
+      "pages/tuwen/tuwen",
+      "pages/refund/modifyRefund/modifyRefund"
+   ],
+   "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#ffffff",
+      "navigationBarTitleText": "智超商互通",
+      "navigationBarTextStyle": "black",
+      "backgroundColorBottom": "#ff5454"
+   },
+   "tabBar": {
+      "backgroundColor": "#fff",
+      "color": "#888888",
+      "selectedColor": "#E54148",
+      "borderStyle": "white",
+      "list": [
+         {
+            "selectedIconPath": "images/home-red.png",
+            "iconPath": "images/home.png",
+            "pagePath": "pages/index/index",
+            "text": "首页"
+         },
+         {
+            "selectedIconPath": "images/cart-red.png",
+            "iconPath": "images/cart.png",
+            "pagePath": "pages/shopCart/shopCart",
+            "text": "购物车"
+         },
+         {
+            "selectedIconPath": "images/my-red.png",
+            "iconPath": "images/my.png",
+            "pagePath": "pages/user/user",
+            "text": "我的"
+         }
+      ]
+   },
+   "usingComponents": {
+      "van-notify": "@vant/weapp/notify/index",
+      "van-skeleton": "@vant/weapp/skeleton/index"
+   },
+   "permission": {
+      "scope.userLocation": {
+         "desc": "为了更好的服务您，请授权允许"
+      }
+   },
+   "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,13 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh":true,
+  "component": true,
+  "usingComponents": {
+      "dropdownmenu": "/components/dropdownmenu/dropdownmenu",
+      "skeleton": "/components/skeleton/index"
+    }
+}

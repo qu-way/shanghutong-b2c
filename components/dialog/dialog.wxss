@@ -1,0 +1,59 @@
+.weui-dialog.weui-dialog_hidden {
+   opacity: 0;
+   transform: scale3d(1, 1, 0)
+}
+
+.weui-dialog {
+   opacity: 1;
+   -webkit-transform: scale3d(1, 1, 1) translateY(-50%);
+   transform: scale3d(1, 1, 1) translateY(-50%);
+   transition: all .2s ease-in
+}
+
+.weui-mask.weui-mask_hidden {
+   opacity: 0;
+   transform: scale3d(1, 1, 0)
+}
+
+.weui-mask {
+   opacity: 1;
+   transform: scale3d(1, 1, 1);
+   transition: all .2s ease-in
+}
+.weui-mask {
+   background: rgba(0,0,0,.6);
+}
+.weui-mask,
+.weui-mask_transparent {
+   position: fixed;
+   z-index: 1000;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+}
+.weui-dialog {
+   width: 640rpx;
+   margin: 0 auto;
+}
+.weui-dialog {
+   position: fixed;
+   z-index: 5000;
+   top: 50%;
+   left: 16px;
+   right: 16px;
+   -webkit-transform: translateY(-50%);
+   transform: translateY(-50%);
+   background-color: #ffffff;
+   text-align: center;
+   border-radius: 12px;
+   overflow: hidden;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: column;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   flex-direction: column;
+   max-height: 90%;
+}

@@ -1,0 +1,38 @@
+<view class="metail">
+   <view class="video">
+      <video src="{{vMedia.videoAddress}}"></video>
+   </view>
+
+   <view class="tex">
+      <text class="">{{vMedia.recommendation}}</text>
+   </view>
+   <view class="bottom">
+      <view class="fenxiang">
+         <text class=""></text>
+         <text class=""></text>
+      </view>
+      <view class="shoucang">
+         <text class=""></text>
+         <text class=""></text>
+      </view>
+      <view class="dianzan">
+         <text class=""></text>
+         <text class=""></text>
+         <text class=""></text>
+      </view>
+      <view class="zaikan">
+         <text class=""></text>
+         <text class=""></text>
+         <text class=""></text>
+      </view>
+   </view>
+</view>
+
+<view class="jianjie">
+   <view class="title">
+      <text class="">简介</text>
+   </view>
+   <view class="tex">
+      <rich-text class="" nodes="{{vMedia.introduce}}"></rich-text>
+   </view>
+</view>

@@ -1,0 +1,78 @@
+<view class="container">
+  <view class="header">
+    <view class="search_box" bindtap="goLink" data-link="/pages/search/search">
+      <text class="iconfont icon-xinbaniconshangchuan-"></text>
+      <text class="seach_text">搜索商品或店铺</text>
+    </view>
+  </view>
+  <dropdownmenu dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuDistrictData='{{addressList}}'
+    dropDownMenuSourceData='{{industryList}}' dropDownMenuStyleData='{{data3}}' dropDownMenuFilterData='{{data4}}'
+    bindtap="indexScrollTo" bind:selectedItem='selectedItem' style="width:100%" />
+  <view class="empty" wx:if="{{!storeList.length}}">
+    <image src="../../images/empty_shop.png"></image>
+    <text>您的当前条件暂无店铺~</text>
+  </view>
+  <view class="shop_background" else>
+    <view class="shop_contain" wx:for="{{storeList}}" wx:key="id">
+      <view class="shop_center" data-store-id="{{item.id}}" data-store-name="{{item.storeName}}" bindtap='toShop' title
+        avatar row="3" loading="{{ loading }}">
+        <view class="bl">
+          <van-skeleton title avatar row="3" loading="{{ loading }}">
+            <view class="cont">
+              <view class="shop_left">
+                <view class="logo">
+                  <image class="sk-header-rect" src="{{item.logoUrl}}?x-oss-process=image/resize,w_120" mode="aspectFill"></image>
+                </view>
+                <view>
+                  <view class="title">{{item.storeName}}</view>
+                  <view class="star_distance">
+                    <view class="star">
+                      <text class="iconfont icon-xingxing"></text>
+                      <text class="text" wx:if='{{item.score>0}}'>5.0</text>
+                      <text class="text" wx:else>暂无评分</text>
+                    </view>
+                  </view>
+                  <!-- 商家标识 -->
+                  <view class="label">
+                    <view>
+                      <text class="name"
+                        wx:if="{{item.isSelfLifting === 0}}">{{item.isSelfLifting === 0 ? '自提' : ''}}</text>
+                    </view>
+                    <view>
+                      <text class="name"
+                        wx:if="{{item.isCommonLogistics === 0}}">{{item.isCommonLogistics === 0 ? '快递' : ''}}</text>
+                    </view>
+                  </view>
+                  <view class="shop_right_bottom" wx:if="{{item.preferential.decrease}}">
+                    <view wx:if="{{item.preferential.decrease}}" wx:key="id" hidden="{{i>1}}" data-index="{{i}}"
+                      wx:for="{{item.preferential.decrease}}" wx:for-item="k" wx:for-index="i">
+                      <text>满减</text>
+                      满{{k[0]}}减{{k[1]}}
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class="shop_right">
+                <view class="distance" wx:if='{{item.distance>0}}'>
+                  <text class="iconfont icon-dingwei-x"></text>
+                  <text class="text">{{item.distance}}m</text>
+                </view>
+                <view class="distance1" wx:else></view>
+              </view>
+            </view>
+            <view class="goods">
+              <view class="list_flex" wx:for="{{item.merchantGoods}}" wx:key="id" wx:if="{{index < 3}}">
+                <view class="shop_list">
+                  <image src="{{item.cover ? item.cover+'?x-oss-process=image/resize,w_200' : '/images/wutu.png'}}" lazy-load="{{ true }}"
+                    mode="aspectFill"></image>
+                  <view class="describe">{{item.name}}</view>
+                  <view><text class="icon">￥{{item.price}}</text></view>
+                </view>
+              </view>
+            </view>
+          </van-skeleton>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

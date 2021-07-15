@@ -1,0 +1,291 @@
+page {
+  background-color: #F3F4F8;
+  width: 100vw;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.applyBlock {
+  background: #fff;
+  padding: 0 30rpx;
+  border-radius: 22rpx;
+}
+
+.title {
+  padding: 20rpx 0;
+}
+
+.quan {
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  border: 2rpx #ddd solid;
+  border-radius: 50%;
+  line-height: 40rpx;
+}
+.icon-true {
+  color: #e54148;
+  font-size: 40rpx;
+}
+.commodity {
+  display: block;
+}
+.storeName {
+  line-height: 76rpx;
+  height: 76rpx;
+}
+.storeName .ti {
+  color: #222222;
+  font-size: 30rpx;
+}
+.storeName .iconfont {
+  color: #999999;
+  font-size: 28rpx;
+}
+.list1 {
+  padding: 0 0 30rpx 0;
+}
+
+.list1 image {
+  width: 140rpx;
+  height: 120rpx;
+  margin: 0 20rpx 0 0;
+}
+
+.listLeft {
+  display: flex;
+}
+
+.message {
+  width: 400rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: scroll;
+  font-size: 28rpx;
+}
+
+.message text {
+  display: block;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #444444;
+}
+
+.listRight {
+  margin-top: 20rpx;
+  color: #4c4c4c;
+  display: flex;
+  justify-content: space-between;
+}
+
+.applyReason {
+  background: white;
+  border-radius: 22rpx;
+  overflow: hidden;
+  margin: 20rpx 0;
+}
+
+.explainReason {
+  background: white;
+  border-radius: 22rpx;
+  margin-top: 20rpx;
+  padding: 20rpx 30rpx;
+}
+
+.reason {
+  display: flex;
+  justify-content: space-between;
+  line-height: 60rpx;
+}
+
+.reason2 {
+  display: flex;
+  justify-content: space-between;
+  line-height: 60rpx;
+}
+
+.price {
+  color: #e54148;
+}
+
+.reason3 {
+  line-height: 60rpx;
+}
+
+.reason3 .des {
+  color: #888888;
+  font-size: 28rpx;
+}
+
+.reason .iconfont {
+  color: #999;
+}
+
+.Pic {
+  padding: 0 40rpx;
+}
+
+.words {
+  font-size: 30rpx;
+}
+
+.PicBlock {
+  position: relative;
+  display: inline-block;
+  margin-right: 20rpx;
+  width: 160rpx;
+  height: 160rpx;
+  background: #F3F4F8;
+}
+
+.del {
+  position: absolute;
+  background: rgba(0, 0, 0, .2);
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.Pic image {
+  width: 100%;
+  height: 100%;
+}
+
+.small {
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 20rpx;
+}
+
+.userReason {
+  background: #f7f8fa;
+  border-radius: 10rpx;
+  height: 180rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 30rpx;
+}
+
+.submit {
+  text-align: center;
+  border-radius: 62rpx;
+  color: #fff;
+  background: #e54148;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 80rpx;
+  margin-bottom: 40rpx;
+  line-height: 88rpx;
+}
+.van-uploader {
+  margin-top: 20rpx;
+}
+
+
+.weui-half-screen-dialog {
+  padding: 0 28rpx 40rpx 28rpx;
+}
+
+.hd {
+  display: inline;
+}
+
+.hd__main {
+  text-align: center;
+  line-height: 88rpx;
+}
+
+.list {
+  width: 100%;
+  height: auto;
+  margin-bottom: 40rpx;
+}
+
+.list .check {
+  height:48rpx;
+}
+
+.flexbox {
+  display: flex;
+
+  border-bottom: 1rpx solid #f3f4f8;
+  align-items: center;
+
+}
+
+.flexbox1 {
+  display: flex;
+  border-bottom: 1rpx solid #f3f4f8;
+  align-items: center;
+}
+
+.flexbox .centerbox {
+  flex: 9;
+}
+
+
+.flexbox .centerbox .title {
+  font-size: 30rpx;
+  height: 48rpx;
+}
+
+.flexbox .centerbox .validity {
+  font-size: 24rpx;
+  height: 48rpx;
+}
+
+.flexbox .centerbox .validity text {
+  font-size: 24rpx;
+}
+
+.areabox {
+  width: 100%;
+  height: 400px;
+  display: block;
+}
+
+.mainbd {
+  background: #f3f4f8;
+  border-radius: 28rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  height: 240rpx;
+  margin-bottom: 40rpx;
+}
+
+.weui-textarea {
+  padding: 20rpx 32rpx;
+  color: #666666
+}
+
+.ft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  color: #ffffff;
+  background: linear-gradient(to right, #e44158, #e54148);
+  border-radius: 40rpx;
+  width: 600rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  margin-top: 40rpx;
+}
+
+.reserve {
+  color: rgba(46, 164, 82, 1) !important;
+}
+
+.value-class {
+  color: rgba(46, 164, 82, 1) !important;
+}

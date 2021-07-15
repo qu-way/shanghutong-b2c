@@ -1,0 +1,198 @@
+<van-tabs animated active="{{ active }}" bind:change="onChange">
+	<van-tab title="全部优惠券">
+		<block wx:if="{{couponList.length>0}}">
+			<view wx:for="{{couponList}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+				<view class="box" wx:if="{{item.couponType === 2}}">
+					<view class="pad {{item.status===1?'hui':'red'}}||{{item.status===2?'hui':'red'}}">
+						<view class="left">
+							<view class="flex1">
+								<text>平台优惠券</text>
+							</view>
+							<view class="flex2">
+								¥
+								<text>{{item.discount}}</text>
+							</view>
+							<view class="flex3" wx:if="{{item.fullCondition===0}}">
+								<text>无门槛券</text>
+							</view>
+							<view class="flex3" else>
+								<text>满减券</text>
+							</view>
+						</view>
+						<view class="center">
+							<view class="block1">
+								<text>{{item.couponName}}</text>
+							</view>
+							<view class="block2">
+								<text>使用时间：{{item.effectiveStartToFinishDate}}</text>
+							</view>
+						</view>
+						<view class="line">
+							<van-divider dashed />
+						</view>
+						<view class="right">
+							<view class="use" bindtap="toUse" wx:if="{{item.couponStatus===0}}">
+								<text>去使用</text>
+							</view>
+							<view class="overdue" wx:if="{{item.couponStatus===1}}">
+								<text class="iconfont icon-yishiyong2"></text>
+							</view>
+							<view class="overdue" wx:if="{{item.couponStatus===2}}">
+								<text class="iconfont icon-yiguoqi5"></text>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="box" wx:if="{{item.couponType === 1}}">
+					<view class="pad {{item.status===1?'hui':'red'}}||{{item.status===2?'hui':'red'}}">
+						<view class="left">
+							<view class="flex1">
+								<text>店铺优惠券</text>
+							</view>
+							<view class="flex2">
+								<image src="{{item.logUrl}}?x-oss-process=image/resize,w_120"></image>
+							</view>
+						</view>
+						<view class="center1">
+							<view class="block1">
+								<text>{{item.title}}</text>
+							</view>
+							<view class="block3">
+								<text class="first">¥</text>
+								<text class="second">{{item.reduceMoney}}</text>
+								<text class="three">满{{item.fullMoney}}可用</text>
+							</view>
+							<view class="block2">
+								<text>使用时间：{{item.effectiveStartToFinishDate}}</text>
+							</view>
+						</view>
+						<view class="line">
+							<van-divider dashed />
+						</view>
+						<view class="right">
+							<view class="use" bindtap="toUse" wx:if="{{item.status===0}}">
+								<text>去使用</text>
+							</view>
+							<view class="overdue" wx:if="{{item.status===1}}">
+								<text class="iconfont icon-yishiyong2"></text>
+							</view>
+							<view class="overdue" wx:if="{{item.status===2}}">
+								<text class="iconfont icon-yiguoqi5"></text>
+							</view>
+							<view class="overdue" wx:if="">
+								<text class="iconfont icon-yiguoqi5"></text>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<view class="empty" wx:else>
+			<image src="../../images/no-coupon.png"></image>
+			<text>该类目下暂无优惠券</text>
+		</view>
+	</van-tab>
+	<van-tab title="店铺优惠券">
+		<block wx:if="{{couponList.length>0}}">
+			<view class="box" wx:for="{{couponList}}" wx:for-item="item" wx:for-index="index" wx:key="id"
+				wx:if="{{item.couponType === 1}}">
+				<view class="pad {{item.status===1?'hui':'red'}}||{{item.status===2?'hui':'red'}}">
+					<view class="left">
+						<view class="flex1">
+							<text>店铺优惠券</text>
+						</view>
+						<view class="flex2">
+							<image src="{{item.logUrl}}?x-oss-process=image/resize,w_120"></image>
+						</view>
+					</view>
+					<view class="center1">
+						<view class="block1">
+							<text>{{item.title}}</text>
+						</view>
+						<view class="block3">
+							<text class="first">¥</text>
+							<text class="second">{{item.reduceMoney}}</text>
+							<text class="three">满{{item.fullMoney}}可用</text>
+						</view>
+						<view class="block2">
+							<text>使用时间：{{item.effectiveStartToFinishDate}}</text>
+						</view>
+					</view>
+					<view class="line">
+						<van-divider dashed />
+					</view>
+					<view class="right">
+						<view class="use" bindtap="toUse" wx:if="{{item.status===0}}">
+							<text>去使用</text>
+						</view>
+						<view class="overdue" wx:if="{{item.status===1}}">
+							<text class="iconfont icon-yishiyong2"></text>
+						</view>
+						<view class="overdue" wx:if="{{item.status===2}}">
+							<text class="iconfont icon-yiguoqi5"></text>
+						</view>
+						<view class="overdue" wx:if="">
+							<text class="iconfont icon-yiguoqi5"></text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<view class="empty" wx:else>
+			<image src="../../images/no-coupon.png"></image>
+			<text>该类目下暂无优惠券</text>
+		</view>
+	</van-tab>
+
+	<van-tab title="平台优惠券">
+		<block wx:if="{{couponList.length>0}}">
+			<view class="box" wx:for="{{couponList}}" wx:for-item="item" wx:for-index="index" wx:key="id"
+				wx:if="{{item.couponType === 2}}" else>
+				<view class="pad {{item.status===1?'hui':'red'}}||{{item.status===2?'hui':'red'}}">
+					<view class="left">
+						<view class="flex1">
+							<text>平台优惠券</text>
+						</view>
+						<view class="flex2">
+							¥
+							<text>{{item.discount}}</text>
+						</view>
+						<view class="flex3" wx:if="{{item.fullCondition===0}}">
+							<text>无门槛券</text>
+						</view>
+						<view class="flex3" else>
+							<text>满减券</text>
+						</view>
+					</view>
+					<view class="center">
+						<view class="block1">
+							<text>{{item.couponName}}</text>
+						</view>
+						<view class="block2">
+							<text>使用时间：{{item.effectiveStartToFinishDate}}</text>
+						</view>
+					</view>
+					<view class="line">
+						<van-divider dashed />
+					</view>
+					<view class="right">
+						<view class="use" bindtap="toUse" wx:if="{{item.couponStatus===0}}">
+							<text>去使用</text>
+						</view>
+						<view class="overdue" wx:if="{{item.couponStatus===1}}">
+							<text class="iconfont icon-yishiyong2"></text>
+						</view>
+						<view class="overdue" wx:if="{{item.couponStatus===2}}">
+							<text class="iconfont icon-yiguoqi5"></text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<view class="empty" wx:else>
+			<image src="../../images/no-coupon.png"></image>
+			<text>该类目下暂无优惠券</text>
+		</view>
+	</van-tab>
+
+</van-tabs>

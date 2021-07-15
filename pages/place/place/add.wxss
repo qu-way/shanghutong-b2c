@@ -1,0 +1,9 @@
+@import '/style/example.wxss';
+
+page {
+  background: #F3F4F8;
+}
+.page__bd {
+  background: #ffffff;
+}
+

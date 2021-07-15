@@ -1,0 +1,69 @@
+@import '/style/example.wxss';
+page {
+  background: #F3F4F8;
+}
+.picker {
+  font-size: 32rpx;
+}
+
+.picker .mar {
+  margin: 0 10rpx;
+}
+
+.picker .iconfont {
+  float: right;
+}
+.color {
+  color: #ffffff;
+  border-radius: 40rpx;
+  background: linear-gradient(to right, #e44158, #e54148);
+}
+.wx-switch-input{
+  width: 100rpx !important;
+  height: 57rpx !important;
+}
+/* false的样式 */
+.wx-switch-input::before{
+  width: 100rpx !important;
+  height: 53rpx !important;
+}
+/* true的样式 */
+.wx-switch-input::after{
+  width: 57rpx !important;
+  height: 53rpx !important;
+}
+.weui-input {
+  font-size: 32rpx;
+}
+.weui-input {
+  font-size: 32rpx;
+  margin-left: 20rpx;
+}
+.weui-cell__bd {
+  margin-left: 20rpx;
+}
+
+.btn {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 60rpx;
+  display: flex;
+}
+
+.btn .hui {
+  width: 290rpx;
+  border-radius: 86rpx;
+  background: #DDDDDD;
+  color: #999999;
+  line-height: 86rpx;
+  height: 86rpx;
+}
+
+.btn .color {
+  width: 290rpx;
+  color: #ffffff;
+  border-radius: 86rpx;
+  background: #e54148;
+  line-height: 86rpx;
+  height: 86rpx;
+}

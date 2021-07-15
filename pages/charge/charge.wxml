@@ -1,0 +1,35 @@
+<!--shanghutong/pages/user/charge.wxml-->
+<view class='wrap'>
+  <view class='charge-form'>
+    <view class='tit'>
+      <view>余额:</view>
+      <navigator class='details' hover-class='none' url='/pages/user/rechargeDetails'>明细</navigator>
+    </view>
+    <view class='charge-yue'></view>
+  </view>
+  <view class='charge-form'>
+    <view class='tit'>
+      <view>金额:</view>
+    </view>
+    <view class='list'>
+      <view class="list-item {{activeTypeId==item.id?'item-hover':''}}">
+        <view class='item-tit'>元</view>
+        <view class='item-subtit'>送</view>
+      </view>
+      <view class='list-item_empty'></view>
+      <view class='list-item_empty'></view>
+      <view class='list-item_empty'></view>
+    </view>
+    <view class='flex-ipt'>
+      <input class='money' min="0" step="0.01" type="digit" placeholder="输入金额" maxlength="15" bindinput="getMoney" bindfocus="bindIptFocus" bindblur="bindIptBlur" value="{{money}}"></input>
+      <view class='bottom-line {{onFocus?"ipt-focus":""}}'></view>
+    </view>
+  </view>
+  <view class='btn {{canPay?"":"disable"}}' bindtap='wxcharge' style="{{canPay?'background:'+skin.color:'background:'+skin.lighter}}">确认</view>
+  <view class='desc'>
+    <view class='h2'>说明：</view>
+    <view class="wxParse">
+      <parser html="{{member_charge_publish}}" />
+    </view>
+  </view>
+</view>

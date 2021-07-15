@@ -1,0 +1,33 @@
+<!--pages/media/media.wxml-->
+<view class="">
+   <view class="empty" wx:if="{{!collegeList.length}}">
+      <image src="../../images/no-order.png" mode="aspectFill"></image>
+      <text>该目录下暂无课程</text>
+   </view>
+   <!-- <view wx:if="{{collegeList.length}}"> -->
+   <van-tabs active="{{ active }}" wx:if="{{collegeList.length}}">
+      <van-tab title="视频">
+         <view class="media" wx:for="{{collegeList}}" wx:key="list" bindtap="goDetail" data-id="{{item.id}}">
+            <view class="body" wx:if="{{item.videoType===1}}">
+               <!-- <view class="video"> -->
+               <video id="myVideo" show-fullscreen-btn="true" src='{{item.videoAddress}}' controls='true'></video>
+               <!-- </view> -->
+               <view class="title">
+                  <text>{{item.title}}</text>
+               </view>
+            </view>
+         </view>
+      </van-tab>
+      <van-tab title="图文">
+         <view class="media" wx:for="{{collegeList}}" wx:key="list" bindtap="goDetail" data-id="{{item.id}}">
+            <view class="body" wx:if="{{item.videoType===2}}">
+               <image src='{{item.videoUrl}}' mode="aspectFit"></image>
+               <view class="title">
+                  <text>{{item.title}}</text>
+               </view>
+            </view>
+         </view>
+      </van-tab>
+   </van-tabs>
+<!-- </view> -->
+</view>

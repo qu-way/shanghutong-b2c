@@ -1,0 +1,204 @@
+page {
+  background-color: #F3F4F8;
+}
+.details {
+  width: 100%;
+  margin-top: 2rpx;
+  position: relative;
+}
+.details .refund {
+  width: 100%;
+  height: 240rpx;
+  background-color: #FFFFFF;
+}
+.details .refund .refund-status {
+  display: flex;
+  padding-top: 60rpx;
+  margin-left: 24rpx;
+}
+.details .refund .refund-status image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 9rpx;
+}
+.details .refund .refund-status text {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #24B512;
+  padding: 2rpx 0;
+  margin-left: 18rpx;
+}
+.details .refund .money {
+  margin-top: 10rpx;
+  margin-left: 24rpx;
+}
+.details .refund .money text {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+.details .refund .money .price {
+  font-size: 52rpx;
+}
+.details .consult {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  position: relative;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.details .consult text {
+  margin-left: 23rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+}
+.details .consult image {
+  width: 14rpx;
+  height: 18rpx;
+  position: absolute;
+  top: 35rpx;
+  right: 24rpx;
+}
+.details .order-status {
+  width: 100%;
+  height: 466rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.details .order-status .business {
+  flex: 2;
+  display: flex;
+  position: relative;
+  margin-top: 25rpx;
+  margin-left: 24rpx;
+}
+.details .order-status .business image {
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 12rpx;
+}
+.details .order-status .business .shop {
+  margin-left: 19rpx;
+}
+.details .order-status .business .shop text {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #333;
+}
+.details .order-status .business .shop image {
+  width: 13rpx;
+  height: 18rpx !important;
+  margin-left: 12rpx;
+}
+.details .order-status .business .merchant {
+  position: absolute;
+  top: 10rpx;
+  right: 24rpx;
+  width: 110rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border: 1rpx solid #E54148;
+  border-radius: 20rpx;
+  font-size: 20rpx;
+  font-weight: 500;
+  color: #E54148;
+}
+.details .order-status .commodity {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.details .order-status .commodity .img {
+  flex: 1.2;
+  width: 100rpx;
+  height: 76rpx !important;
+}
+.details .order-status .commodity .img image {
+  width: 90%;
+}
+.details .order-status .commodity .commoditylist {
+  flex: 6;
+  position: relative;
+  padding-top: 10rpx;
+}
+.details .order-status .commodity .commoditylist .commodity-name {
+  width: 450rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.details .order-status .commodity .commoditylist .commodity-weight {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #999;
+  margin-top: 18rpx;
+}
+.details .order-status .commodity .commoditylist image {
+  width: 14rpx;
+  height: 18rpx;
+  position: absolute;
+  top: 41rpx;
+  right: 25rpx;
+}
+.details .order-status .information {
+  flex: 4;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #666;
+  margin-left: 24rpx;
+}
+.details .order-status .information .number {
+  display: flex;
+  justify-content: space-between;
+}
+.details .order-status .information .number .copy {
+  width: 64rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1rpx solid #CCCCCC;
+  border-radius: 4rpx;
+  margin-right: 25rpx;
+}
+.details .order-status .information .tice {
+  margin: 10rpx 0;
+}
+.details .order-status .line {
+  width: 702rpx;
+  height: 2rpx;
+  background: #F3F4F8;
+  margin: 20rpx 24rpx;
+}
+.details .moneys {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 98rpx;
+  background-color: #fff;
+}
+.details .moneys .moneys-box {
+  position: absolute;
+  right: 23rpx;
+  bottom: 15rpx;
+  width: 200rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  background: #FFFFFF;
+  border: 2rpx solid #E54148;
+  border-radius: 34rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #E54148;
+}

@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "paySix": "../../components/key_component/component",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-notify": "@vant/weapp/notify/index"
+  }
+}

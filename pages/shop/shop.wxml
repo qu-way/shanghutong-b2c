@@ -1,0 +1,204 @@
+<view class='page-wrap'>
+  <view class="page-container">
+    <mp-dialog title="{{name}}" show="{{openAttr}}" bindbuttontap="tapDialogButton">
+      <view class="specifica-tion" slot="center">
+        <view class="gg">规格：</view>
+        <view class="detail" wx:for="{{specificationList}}" wx:key="id" wx:for-item="item" wx:for-index="index">
+          <view class="value {{item.checked ? 'selected' : ''}} {{item.goods_number <=0?'out-stock':''}}"
+            bindtap="clickSkuValue" data-value-id="{{item.specificationId}}" data-cover="{{item.specificationId}}"
+            data-index="{{index}}" data-spec-name="{{item.goodsSpecificationName}}" data-price="{{item.price}}">
+            {{item.goodsSpecificationName}} </view>
+        </view>
+      </view>
+      <view class="bott" slot="footer">
+        <view class="flbox">
+          <view class="price">￥{{specPrice}}</view>
+          <view class="but" bindtap="addCart">加入购物车</view>
+        </view>
+      </view>
+    </mp-dialog>
+    <!-- 商家 -->
+    <view class='my_list'>
+      <view class='list_part'>
+        <view class="left" bindtap="goShopDetail">
+          <image class="avatar" src="{{logoUrl}}?x-oss-process=image/resize,w_120" mode="aspectFill"></image>
+        </view>
+        <view class="center" bindtap="goShopDetail">
+          <view class="title">
+            <view class='name'>{{storeName}}</view>
+            <text class="iconfont icon-gengduo1"></text>
+          </view>
+          <view class="label" bindtap="goShopDetail">
+            <text class='name' wx:if="{{isSelfLifting === 1}}">{{isSelfLifting === 0 ? '自提' : ''}}</text>
+            <text class='name' wx:if="{{isSelfSupport === 1}}">{{isCommonLogistics === 0 ? '配送' :''}}</text>
+            <text class='name' wx:if="{{isCommonLogistics === 1}}">{{isCommonLogistics === 1 ? '快递' : ''}}</text>
+          </view>
+        </view>
+        <view class="shop-box" catchtap="toSearchs" data-store-id="{{storeId}}">
+          <text class="iconfont icon-xinbaniconshangchuan-"></text>
+          <text class="search">搜索</text>
+        </view>
+      </view>
+    </view>
+    <!-- 广告栏 -->
+    <!-- <view class="advertisement">
+      <image src="../../images/guang.jpg" mode="aspectFill"></image>
+    </view> -->
+    <view class="shop-coupon">
+      <view class="t-line">
+        <view class="leftText">
+          <view class="biao"></view>
+          <text>店铺优惠</text>
+        </view>
+        <view class="right" bindtap="showReceive">
+          <text class="num">共{{couponList.length}}个优惠</text>
+          <text class="iconfont icon-gengduo1"></text>
+        </view>
+      </view>
+      <!-- 优惠券滑块 -->
+      <scroll-view scroll-x>
+        <view class="scrollx" scroll-x>
+          <view class="bottom {{item.reCoupon?'hui':'red'}}" wx:for="{{couponList}}" wx:key="*this">
+            <text class="iconfont icon-youhuiquan-copy-copy"></text>
+            <view class="die" bindtap="showReceive">
+              <view class="num">
+                <text class="d2">{{item.discount}}</text>
+              </view>
+              <view class="quan">
+                <view class="tong">
+                  <text>{{item.couponName}}</text>
+                </view>
+                <view class="man">
+                  <text>满{{item.fullCondition}}元可用</text>
+                </view>
+              </view>
+              <view class="ling">
+                <text>{{item.reCoupon ? '已领取' : '领'}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 商品分类 -->
+    <view class="content-container">
+      <scroll-view class="classify-container" scroll-y="true" scroll="scroll">
+        <view class="classify {{categoryId===item.id?'active':''}} " wx:for="{{cateList}}" wx:key="id"
+          data-id="{{item.id}}" data-store-id="{{item.storeId}}" data-name="{{item.name}}" bindtap="getMerchantGoods">
+          <view class="name">{{item.name}}</view>
+        </view>
+      </scroll-view>
+      <scroll-view class="goods-container" scroll-y="true" scroll-into-view="{{classifyViewed}}"
+        bindscroll="onGoodsScroll">
+        <view class="tit">
+          <text>{{cateName}}</text>
+        </view>
+        <view wx:for="{{merchantGoods}}" wx:key="id" animation="{{current}}" class="top">
+          <van-skeleton title row="2" loading="{{ loading }}">
+            <view class="goods">
+              <view bindtap="goDetail" data-id="{{item.id}}">
+                <view class="shop">
+                  <image class="pic" mode="aspectFill" src="{{item.cover ? item.cover+'?x-oss-process=image/resize,w_120' : defaultImg}}">
+                  </image>
+                </view>
+                <view class="name ellipsis">{{item.name}}</view>
+                <view class="desc">
+                  <text class="em">正品保证</text>
+                  <text class="info">包邮</text>
+                </view>
+                <view class="price">￥{{item.price}}
+                </view>
+              </view>
+              <view class="addCart">
+                <text class="iconfont icon-tianjia" data-price="{{item.price}}" data-name="{{item.name}}"
+                  data-cover="{{item.cover}}" data-goods-id="{{item.id}}"
+                  data-spec="{{item.specificationSelectList}}" bindtap="tapAddCart"></text>
+              </view>
+            </view>
+          </van-skeleton>
+        </view>
+      </scroll-view>
+    </view>
+    <van-popup show="{{ showCartDetail }}" round position="bottom" bind:close="hideCartDetail">
+      <view class="list">
+        <view class="top">
+          <text class="cart1">购物车</text>
+          <text class="number">共{{cart.count}}件商品</text>
+          <view bindtap="cleanCart">
+            <text class="iconfont icon-qingkong"></text>
+            <text class="empty">清空购物车</text>
+          </view>
+        </view>
+        <view class="item" wx:for="{{cartList}}" wx:key="*this">
+          <view class='cartList'>
+            <view class="flexbox">
+              <view class="shopImg">
+                <image src="{{item.cover}}?x-oss-process=image/resize,w_200"></image>
+              </view>
+              <view class="right">
+                <view class="name ellipsis inside-content">{{item.name}}</view>
+                <view class="guige">{{item.goodsSpecificationName}}</view>
+                <view class="bottom">
+                  <view class="right-content iconfont icon-tianjia" data-goods-id="{{item.goodsId}}"
+                    data-specification-id="{{item.goodsSpecificationId}}" data-buyNum="{{item.buyNum}}"
+                    data-num="{{item.buyNum}}" data-name="{{item.name}}" data-price="{{item.price}}"
+                    bindtap="bomAddCart"></view>
+                  <view class="num right-content">{{item.buyNum}}</view>
+                  <view class="right-content iconfont icon-jian" data-goods-id="{{item.goodsId}}"
+                    data-specification-id="{{item.goodsSpecificationId}}" data-price="{{item.price}}"
+                    data-name="{{item.name}}" bindtap="tapReduceCart"></view>
+                  <view class="total order-price">￥{{item.price}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-popup>
+
+    <van-popup show="{{ receive }}" round position="bottom" z-index="300" closeable bind:close="hideReceive">
+      <view class="re">
+        <view class="title">
+          <view>优惠券</view>
+        </view>
+        <view class="bod" wx:for="{{couponList}}" wx:key="id" >
+          <view class="amount">
+            <view class="money">
+              <text class="label">￥</text>
+              <text class="num">{{item.discount}}</text>
+            </view>
+            <view class="full">满{{item.fullCondition}}可用</view>
+          </view>
+          <view class="name">
+            <view class="shop">{{item.couponName}}</view>
+            <view class="term">有效期：{{item.effectiveStartToFinishDate}}</view>
+          </view>
+          <view class="line">
+            <van-divider dashed />
+          </view>
+          <view class="get" bindtap="upCoupon" data-coupon-id="{{item.id}}">
+            <text>{{item.reCoupon ? '已领取' : '领取'}}</text>
+          </view>
+        </view>
+      </view>
+    </van-popup>
+    </view>
+	<view class="cart">
+		<view class="data" bindtap="showCartDetail">
+			<view class="icon" animation="{{ ani }}">
+				<text class="iconfont icon-cart {{cart.count?'':'none'}}"></text>
+				<view class="count {{cart.count?'':'none1'}}">{{cart.count}}</view>
+			</view>
+			<view class="total">合计：
+				<text>￥{{cart.total}}</text>
+			</view>
+		</view>
+		<form bindsubmit="submit">
+			<button class="yellow {{cart.count?'':'disabled'}}" formType="submit" disabled="{{!cart.count}}">去结算
+			</button>
+		</form>
+	</view>
+</view>
+
+<view class="good_box" hidden="{{hide_good_box}}" style="left: {{bus_x}}px; top: {{bus_y}}px;">
+</view>

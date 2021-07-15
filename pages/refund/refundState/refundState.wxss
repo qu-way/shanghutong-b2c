@@ -1,0 +1,199 @@
+page {
+  background-color: #F3F4F8;
+}
+.details {
+  width: 100%;
+  margin-top: 2rpx;
+  position: relative;
+}
+.details .refund {
+  width: 100%;
+  height: 240rpx;
+  background-color: #FFFFFF;
+}
+.details .refund .refund-status {
+  display: flex;
+  padding-top: 60rpx;
+  margin-left: 24rpx;
+}
+.details .refund .refund-status image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 9rpx;
+}
+.details .refund .refund-status text {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #24B512;
+  padding: 2rpx 0;
+  margin-left: 18rpx;
+}
+.details .refund .money {
+  margin-top: 10rpx;
+  margin-left: 24rpx;
+}
+.details .refund .money text {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+.details .refund .money .price {
+  font-size: 52rpx;
+}
+.details .consult {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  position: relative;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.details .consult text {
+  margin-left: 23rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+}
+.details .consult image {
+  width: 14rpx;
+  height: 18rpx;
+  position: absolute;
+  top: 35rpx;
+  right: 24rpx;
+}
+.order-status {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  background: #FFFFFF;
+  padding: 10rpx 20rpx 20rpx 20rpx;
+}
+.order-status .business {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+.business image {
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 12rpx;
+}
+.left {
+  display: flex;
+}
+.shop {
+  line-height: 66rpx;
+}
+.shop .title {
+  font-size: 30rpx;
+  color: #222222;
+}
+.shop .iconfont {
+  font-size: 28rpx;
+}
+.merchant {
+  width: 110rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    border: 1rpx solid #E54148;
+    border-radius: 20rpx;
+    font-size: 22rpx;
+    color: #E54148;
+}
+.order-status .commodity {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+.commodity .img {
+  flex: 1.2;
+  width: 100rpx;
+  height: 76rpx !important;
+}
+.commodity .img image {
+  width: 90%;
+}
+.commodity .commoditylist {
+  flex: 6;
+  position: relative;
+  padding-top: 10rpx;
+}
+ .commoditylist .commodity-name {
+  width: 450rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+ .commoditylist .commodity-weight {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #999;
+  margin-top: 18rpx;
+}
+ .commoditylist image {
+  width: 14rpx;
+  height: 18rpx;
+  position: absolute;
+  top: 41rpx;
+  right: 25rpx;
+}
+ .information {
+  flex: 4;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #666;
+  margin-left: 24rpx;
+}
+ .information .number {
+  display: flex;
+  justify-content: space-between;
+}
+.information .number .copy {
+  width: 64rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1rpx solid #CCCCCC;
+  border-radius: 4rpx;
+  margin-right: 25rpx;
+}
+ .information .tice {
+  margin: 10rpx 0;
+}
+ .order-status .lineke {
+  width: 646rpx;
+  height: 2rpx;
+  background: #F3F4F8;
+  margin: 10rpx 28rpx;
+}
+.details .moneys {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 98rpx;
+  background-color: #fff;
+}
+.details .moneys .moneys-box {
+  position: absolute;
+  right: 23rpx;
+  bottom: 15rpx;
+  width: 200rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  background: #FFFFFF;
+  border: 2rpx solid #E54148;
+  border-radius: 34rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #E54148;
+}

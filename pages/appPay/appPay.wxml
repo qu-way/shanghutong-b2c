@@ -1,0 +1,19 @@
+<!--pages/appPay/appPay.wxml-->
+<!-- <view>{{codePay1}}</view>
+<view>{{codePay2}}</view> -->
+<view class="empty" wx:if="{{displays}}">
+   <view class="main" wx:if="{{state===true}}">
+      <view class="iconfont icon-chenggong1"></view>
+      <view class="state">支付成功</view>
+      <view class="description">恭喜您，本次交易支付成功~</view>
+   </view>
+   <view class="main" wx:if="{{state===false}}">
+      <view class="iconfont icon-shibai-yin"></view>
+      <view class="state">支付失败</view>
+      <view class="description">抱歉，订单支付失败，请重新发起支付~</view>
+   </view>
+   <!-- <view class="flexx">
+      <button open-type="launchApp" app-parameter="wechat" binderror="launchAppError">打开APP</button>
+      <button bindtap="goIndex">留在小程序</button>
+   </view> -->
+</view>

@@ -1,0 +1,30 @@
+<!-- 地址列表 -->
+<view class="location-list-wrap">
+  <view class="location-item-wrap" >
+    <view class="location-item" wx:for="{{locationList}}" wx:key="index">
+      <text class="iconfont icon-dingwei"></text>
+      <view class="location-info-wrap" data-index="{{index}}" data-id="{{item.id}}" bindtap="selectAddress">
+        <view class="user-info">
+          <text>{{item.name}}</text>
+          <text>{{item.phone}}</text>
+        </view>
+        <view class="location-info">
+          <text class="default" wx:if="{{item.active == 1}}">默认</text>
+          <text>{{item.province}}</text>
+          <text>{{item.city}}</text>
+          <text>{{item.area}}</text>
+          <text>{{item.address}}</text>
+        </view>
+      </view>
+      <view class="location-edit-wrap">
+        <navigator class="location-edit-btn" url="../place/edit?id={{item.id}}&name={{item.name}}&phone={{item.phone}}&province={{item.province}}&city={{item.city}}&area={{item.area}}&address={{item.address}}&active={{item.active}}" 
+        >
+          编辑
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <navigator class="insert-location-btn"  url="../place/add?id=1&province=湖南省&city=长沙市&area=岳麓区">
+    <text>新增收货地址</text>
+  </navigator>
+</view>

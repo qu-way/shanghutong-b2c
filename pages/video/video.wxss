@@ -1,0 +1,72 @@
+page {
+   background-color: #F3F4F8;
+}
+.metail {
+   width: 100%;
+   background-color: #ffffff;
+}
+.metail .video {
+   width: 100%;
+   height: 460rpx;
+}
+.video video {
+   width: 100%;
+   height: 460rpx;
+}
+
+.metail .tex {
+   margin: 20rpx;
+}
+
+.metail .bottom {
+   display: flex;
+}
+
+.bottom .fenxiang {
+   display: flex;
+}
+
+.bottom .fenxiang text {
+   display: flex;
+}
+
+.bottom .shoucang {
+   display: flex;
+}
+.bottom .shoucang text {
+   font-size: 30rpx;
+}
+
+.bottom .dianzan {
+   display: flex;
+}
+
+.bottom .dianzan text {
+   font-size: 30rpx;
+}
+
+.bottom .zaikan {
+   display: flex;
+}
+
+.bottom .zaikan text {
+  font-size: 30rpx;
+}
+
+.jianjie {
+   background-color: #ffffff;
+   margin-top: 20rpx;
+   padding:20rpx;
+}
+.jianjie .title {
+   font-size: 32rpx;
+   color: #222222;
+}
+
+.jianjie .title text {
+   font-size: 32rpx;
+   color: #222222;
+}
+.jianjie .tex {
+   font-size: 30rpx;
+}

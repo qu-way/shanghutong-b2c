@@ -1,0 +1,100 @@
+page {
+  background-color: #F3F4F8;
+  width: 100vw;
+  padding: 20rpx 24rpx 20rpx 24rpx;
+  box-sizing: border-box;
+}
+.location-list-wrap {
+  position: relative;
+  width: 100%;
+}
+.location-list-wrap .location-item-wrap {
+  padding-bottom: 140rpx;
+  min-height: calc(100vh - 180rpx);
+}
+.location-list-wrap .location-item-wrap .location-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 140rpx;
+  padding: 20rpx 24rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+}
+.location-list-wrap .location-item-wrap .location-item .iconfont.icon-dingwei {
+  flex: 1;
+  font-size: 42rpx;
+  color: #e54148;
+}
+.location-list-wrap .location-item-wrap .location-item .location-info-wrap {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.location-list-wrap .location-item-wrap .location-item .location-info-wrap .user-info text {
+  color: #999999;
+  font-size: 28rpx;
+  margin-left: 27rpx;
+}
+.location-list-wrap .location-item-wrap .location-item .location-info-wrap .user-info text:first-child {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333333;
+  margin: 0;
+}
+.location-list-wrap .location-item-wrap .location-item .location-info-wrap .location-info {
+  overflow: hidden;
+}
+.location-list-wrap .location-item-wrap .location-item .location-info-wrap .location-info .default {
+  display: inline-block;
+  padding: 2rpx 8rpx;
+  font-size: 28rpx;
+  color: #e54148;
+  background-color: #fcecec;
+}
+.location-list-wrap .location-item-wrap .location-item .location-info-wrap .location-info text {
+  color: #333333;
+  font-size: 28rpx;
+  text-align: left;
+  margin-right: 30rpx;
+}
+
+.location-list-wrap .location-item-wrap .location-item .location-edit-wrap {
+  flex: 1;
+  padding: 12rpx;
+  border-left: 4rpx solid #999;
+  margin-top: 18rpx;
+}
+.location-list-wrap .location-item-wrap .location-item .location-edit-wrap .location-edit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #999999;
+}
+.location-list-wrap .insert-location-btn {
+  position: fixed;
+  bottom: 40rpx;
+  left: 60rpx;
+  right: 60rpx;
+  width: 80%;
+  height: 88rpx;
+  border-radius: 40rpx;
+  background-color: #e54148;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 500;
+  line-height: 88rpx;
+  display: grid;
+}
+
+.location-list-wrap .insert-location-btn text {
+  text-align: center;
+}
+
+.location-list-wrap button::after{
+	border: none;
+ }

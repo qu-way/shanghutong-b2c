@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "usingComponents": {
+      "van-card": "@vant/weapp/card/index"
+    }
+  }

@@ -1,0 +1,52 @@
+<view class="empty" wx:if="{{!goodsList.length}}">
+  <image  src="../../images/follow.png" mode="aspectFill"></image>
+  <text>您还没有关注的店铺</text>
+</view>
+
+<view class="shop_contain" else>
+  <view class="shop_center" wx:for="{{goodsList}}" wx:for-index="index" wx:for-item="item" wx:key="item.id"
+    data-store-id="{{item.storeId}}" bindtap="toShop">
+    <view class="shop_left">
+      <image src="{{item.logoUrl}}?x-oss-process=image/resize,w_120" mode="aspectFill"></image>
+    </view>
+    <view class="shop_right">
+      <view class='title'>{{item.shopName}}</view>
+      <view class="star_distance" bindtap="" data-id="{{item.id}}">
+        <view class="star">
+          <text class="iconfont icon-xingxing" wx:key="item.id"></text>
+          <text>{{item.shopComment}}</text>
+          <text wx:if='{{item.score==0}}'>暂无评分</text>
+        </view>
+        <view class="distance1" wx:if='{{item.distance==0}}'></view>
+        <view class="distance" wx:else>
+          <text class="iconfont icon-dingwei-x"></text>
+          <text>{{item.shopDistance}}m</text>
+        </view>
+      </view>
+      <!-- 商家标识 -->
+      <view class="label">
+        <text class='name'
+          wx:if="{{item.storeTagVoList.isSelfSupport === 0}}">{{item.storeTagVoList.isSelfSupport === 0 ? '自营' : ''}}</text>
+        <text class='name'
+          wx:if="{{item.storeTagVoList.isSelfLifting === 0}}">{{item.storeTagVoList.isSelfLifting === 0 ? '自提' : ''}}</text>
+        <text class='name'
+          wx:if="{{item.storeTagVoList.isCommonLogistics === 0}}">{{item.storeTagVoList.isCommonLogistics === 0 ? '快递' : ''}}</text>
+      </view>
+      <view class="list_flex">
+        <view class="shop_list" wx:for="{{item.merchantVoList}}" wx:for-index="index" wx:for-item="i" wx:key="index" wx:if="{{index<3}}" bindtap="toShop"
+          data-id="{{i.id}}">
+          <image src="{{i.goodsCover}}?x-oss-process=image/resize,w_200" mode="aspectFill"></image>
+          <text class="describe">{{i.goodsName}}</text>
+          <text class="icon">￥{{i.goodsPrice}}</text>
+        </view>
+      </view>
+      <view class="shop_right_bottom" wx:if="{{i.preferential.decrease}}">
+        <view wx:if="{{i.preferential.decrease}}" wx:key="*this" hidden="{{i>1}}" data-index="{{i}}"
+          wx:for="{{i.preferential.decrease}}" wx:for-item="k" wx:for-index="i">
+          <text>满减</text>
+          满{{k[0]}}减{{k[1]}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "设置",
+  "component": true,
+  "usingComponents": { 
+    "paySix": "../../components/key_component/component"   
+  }
+}

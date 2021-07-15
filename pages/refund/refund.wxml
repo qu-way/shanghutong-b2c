@@ -1,0 +1,60 @@
+<view class="after-sales">
+  <view class="afterlist" wx:for="{{refundList}}" wx:key="refundList" wx:if="{{refundList.length>0}}">
+    <view class="shop">
+      <view class="shop-name">
+        <text class="title">{{item.storeInfo.storeName}}</text>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+      <text class="shop-status" wx:if="{{item.status===0}}">待审核</text>
+      <text class="shop-status" wx:if="{{item.status===2}}">商家待收货</text>
+      <text class="shop-status" wx:if="{{item.status===4}}">待退款</text>
+      <text class="shop-status" wx:if="{{item.status===10}}">已退款完成</text>
+      <text class="shop-status" wx:if="{{item.status===100}}">已驳回</text>
+      <text class="shop-status" wx:if="{{item.status===20}}">退货关闭</text>
+    </view>
+    <view class="commodity">
+      <view class="img">
+        <image src="{{item.goodsCover}}"></image>
+      </view>
+      <view class="commoditylist">
+        <view class="commodity-name">{{item.goods.name}}</view>
+        <view class="commodity-weight">
+          <text>{{item.goodsSpecification.goodsSpecificationName}}</text>
+        </view>
+        <view class="commodity-price">
+          <text>¥{{item.refundedPrice}}</text>
+          <text class="quantity">x{{item.orderInfo.quantity}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="amount">
+      <view class="payment">
+        <text class="actualpay">实付款：</text>
+        <text class="payment-price">{{item.orderInfo.payPrice}}</text>
+      </view>
+      <view class="refund">
+        <text class="money">退款金额：</text>
+        <text class="refund-price">￥{{item.refundedPrice}}</text>
+      </view>
+    </view>
+    <view class="operation">
+      <view class="delete" data-id="{{item.id}}" bindtap="delete" wx:if="{{item.status===0}}">
+        <text>取消</text>
+        <showBtn id="showBtn" bind:error="onCancel" bind:success="onConfirm"></showBtn>
+      </view>
+      <view class="sales" wx:if="{{item.status===2 || item.status===4 || item.status===100 || item.status===20}}">
+        <navigator url="./refundDetail/refundDetail?id={{item.id}}">售后详情</navigator>
+      </view>
+      <view class="sales" wx:if="{{item.status===10}}">
+        <navigator url="./moneyGoing/moneyGoing">钱款去向</navigator>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{refundList.length<1}}">
+      <image src="../../images/no-order.png"></image>
+      <text>暂无任何售后记录～</text>
+    </view>
+</view>
+
+

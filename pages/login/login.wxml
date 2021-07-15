@@ -1,0 +1,26 @@
+<view class="sigin">
+  <view class="iamg">
+    <text class="iconfont icon-logo"></text>
+  </view>
+  <view class="content">
+    <text>开启</text>
+    <text class="zhichao"> 智超商互通 </text>
+    <text>之旅</text>
+  </view>
+  <view class="phone">
+    <button hover-class="none" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">手机一键登录</button>
+  </view>
+</view>
+<view class="bottom">
+  <view class="xieyi">
+    <view>
+      若您的手机号未注册，将为您自动注册。
+    </view>
+    <view>
+      注册或登录即代表您同意我们的
+      <text>《用户协议》</text>
+    和
+    <text>《隐私协议》</text>
+  </view>
+  </view>
+</view>

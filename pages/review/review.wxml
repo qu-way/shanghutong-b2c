@@ -1,0 +1,78 @@
+<!--pages/review/review.wxml-->
+<view class="container">
+    <view class="store">
+        <view class="title">
+            <text class="left">门店评价</text>
+            <text class="right">已对门店匿名，请放心评价</text>
+        </view>
+        <view class="store_info">
+            <image src="../../images/zhichao.png"></image>
+            <view class="carteen">
+                <text class="titl">百果园(长沙湘仪店)</text>
+                <view class="score">
+                    <view class="tit">
+                        <text>评分</text>
+                    </view>
+                    <view class="ico">
+                        <van-rate value="{{ value }}" gutter="0rpx" void-color="#e54148" color="#e54148"
+                            touchable="true" bind:change="onChange" />
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="store">
+        <view class="title">
+            <text class="left">商品评价</text>
+        </view>
+        <view class="store_info">
+            <image src="../../images/zhichao.png"></image>
+            <view class="carteen">
+                <text>描述相符</text>
+                <view class="score">
+                    <view class="ico">
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="review_text">
+            <textarea placeholder="商品满足你的期待吗？说说你的感受，分享给想买的他们吧！" placeholder-style="color:#999;"
+                bindinput='changeText'></textarea>
+            <text>最多输入100字</text>
+        </view>
+        <!--上传图片-->
+        <view class="upload_contain">
+            <view class="upload_pic">
+                <van-uploader file-list="{{ fileList }}" deletable="{{ true }}" max-count="3"
+                    bind:after-read="afterRead" />
+            </view>
+            <!--图片复现的容器-->
+            <view class="show_pic">
+                <image wx:for="{{previewSrcs}}" wx:key="*this" src="{{rootUrl+item}}"
+                    style="width:100rpx;height:100rpx"></image>
+            </view>
+        </view>
+        <!--店铺评分-->
+        <view class="store_grade_level">
+            <view class="taste">
+                <view class="wuliu">物流评分</view>
+                <view class="faces">
+                    <van-rate value="{{ value }}" gutter="0rpx" void-color="#e54148" color="#e54148" touchable="true"
+                        bind:change="onChange" />
+                </view>
+            </view>
+            <view class="taste">
+                <view class="wuliu">服务评分</view>
+                <view class="faces">
+                    <van-rate value="{{ value }}" gutter="0rpx" void-color="#e54148" color="#e54148" touchable="true"
+                        bind:change="onChange" />
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <view class="issue" bindtap="clickIssue">
+        <view class="issue_btn">发布</view>
+    </view>
+</view>

@@ -1,0 +1,337 @@
+<view class="good_box" hidden="{{hide_good_box}}" style="left: {{bus_x}}px; top: {{bus_y}}px;"></view>
+<!-- 商品规格弹窗 -->
+<view class="attr-pop-box" hidden="{{!openAttr}}" bindtap='closeAttr'>
+	<view class="attr-pop" catchtap="handleTap">
+		<view class="close" catchtap="closeAttr">
+			<text class="iconfont icon-guanbi1"></text>
+		</view>
+		<view class="img-info">
+			<view class="img-wrap">
+				<image class="img" src="{{gallery[0].img_url}}?x-oss-process=image/resize,w_120" mode="aspectFill"></image>
+			</view>
+			<view class="info">
+				<view class='price-range' wx:if="{{priceChecked == false}}">
+					<view class='retail-price'>
+						<view class='g-price'>{{item.discountPrice}}元</view>
+					</view>
+				</view>
+				<view class='price-range' wx:elif="{{priceChecked == true}}">
+					<view class='retail-price'>
+						<view class='p-title'></view>
+						<view class='g-price'>{{checkedSpecPrice}}元</view>
+					</view>
+				</view>
+				<view class="a">已选择：{{checkedSpecText}}</view>
+			</view>
+		</view>
+		<view class="spec-con">
+			<view class='spec-item'>
+				<view class="values" wx:for="{{specificationList}}" wx:key="id">
+					<view class="value {{item.checked ? 'selected' : ''}} {{item.goods_number <=0?'out-stock':''}}"
+						bindtap="clickSkuValue" data-value-id="{{item.specificationId}}" data-index="{{index}}"
+						data-name-id="{{item.specificationId}}">{{item.goodsSpecificationName}}</view>
+				</view>
+			</view>
+			<view class="number-item">
+				<view class="name">购买数量:</view>
+				<view class="selnum">
+					<button class="cut" bindtap="cutNumber">-</button>
+					<input value="{{number}}" class="number" type="number" cursor-spacing="100" bindblur="inputNumber" />
+					<button class="add" bindtap="addNumber" disabled='{{disabled}}'>+</button>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 购物车弹窗 -->
+<view class="mask" wx:if="{{shopNumber>0}}" hidden="{{!maskShopCar}}" data-ty="1" bindtap='maskCar'>
+	<view class="shop-car-con">
+		<view wx:if="{{shopNumber>0}}" class='clear_car' bindtap='clearShopCar'>
+			<image src='../images/car_0zhichao.png'></image>
+			<text>清空购物车</text>
+		</view>
+		<view wx:if="{{shopNumber==0}}" class='clear_car' bindtap=''>
+			<image src='../images/car_0zhichao.png'></image>
+			<text>购物车无商品</text>
+		</view>
+		<view class="car_scroll" style="height:{{windowHeight/2}}rpx">
+			<view class='car_content' wx:for="{{shopCarData}}" wx:for-index="gkey" wx:for-item="ginfo"
+				wx:key="car_content">
+				<view class='order_name'>
+					<text>{{ginfo.title}}</text>
+					<text>【{{ginfo.spec==''?'默认':ginfo.spec}}】</text>
+				</view>
+				<view class='order_right'>
+					<text class='order_price'>￥{{ginfo.price}}</text>
+					<view class='order_btn'>
+						<text bindtap='decreaseNum' data-commid="{{ginfo.id}}" data-gkey="{{gkey}}" class="cantap">
+							-
+						</text>
+						<text>{{ginfo.num}}</text>
+						<image src='../images/order-add.png' data-gkey="{{gkey}}" data-commid="{{ginfo.id}}" bindtap='addNum'>
+						</image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 购物车 -->
+<view class="order-info">
+	<view class='car_left'>
+		<view wx:if="{{shopNumber>0}}" class="o-left">￥{{sumPrice}}</view>
+		<view class="home" bindtap="goIndex">
+			<text class="iconfont icon-shouye"></text>
+			<text class="text-home">首页</text>
+		</view>
+		<view class="cart" bindtap="goCart">
+			<text class="iconfont icon-gouwuche"></text>
+			<!-- 购物车数量角标 -->
+			<text class="text-cart">购物车</text>
+		</view>
+
+		<view class="collection" bindtap="addCollec" data-id="{{detailsList.id}}">
+			<text class="iconfont icon-shoucang1" style="color:{{cColor}}"></text>
+			<text class="text-collection" style="color:{{cColor}}">{{shoucang}}</text>
+		</view>
+
+		<view wx:if="{{shopNumber>0}}" class="shop-number">
+			<text>{{shopNumber<0?0:shopNumber}}</text>
+		</view>
+	</view>
+	<view class="o-cart" bindtap='submitShopCar' data-id='{{detailsList.id}}'>
+		<text class="cart-button">加入购物车</text>
+	</view>
+
+	<view class="o-buy" bindtap='toPay'>
+		<text class="buy-button">立即购买</text>
+	</view>
+</view>
+
+
+<!-- 页面主内容 -->
+<view class='container'>
+	<view class="swiperCenter">
+		<swiper indicator-dots="true" circular="true" display-multiple-items="1" easing-function="easeInCubic"
+			interval="5000" duration="500" width="100%" indicator-color="#c9d4d4" indicator-active-color="#e54148">
+			<van-skeleton title row="1" loading="{{ loading }}">
+				<swiper-item wx:if="{{detailsList.videoUrl}}" style="text-align: center;">
+					<video id="myVideo" show-fullscreen-btn="true" src='{{detailsList.videoUrl}}' controls='true'></video>
+				</swiper-item>
+
+				<block wx:for="{{imaUrl}}" wx:for-index="index" wx:for-item="item" wx:key="img">
+					<swiper-item>
+						<image src="{{item}}?x-oss-process=image/resize,w_750" class="sviewde-image" lazy-load="{{ true }}"
+							mode="aspectFill"></image>
+					</swiper-item>
+				</block>
+			</van-skeleton>
+		</swiper>
+	</view>
+	<view class="background">
+		<view class="dinamic">
+			<van-skeleton title row="2" loading="{{ loading }}">
+				<view class="maindes">
+					<view class="price">￥
+						<text>{{detailsList.price}}</text>
+					</view>
+					<view class="share">
+						<button open-type="share">
+							<text class="iconfont icon-fenxiang"></text>
+							<text class="s1">分享</text>
+						</button>
+					</view>
+				</view>
+				<view class="title">
+					<text>{{detailsList.name}}</text>
+				</view>
+				<view class="label" wx:for="{{specificationList}}" wx:key="index" wx:if="{{index<1}}">
+					<text>{{item.provinceName}}</text>
+				</view>
+			</van-skeleton>
+		</view>
+
+	</view>
+	<!-- 这里是商品保证 -->
+	<view class="describe">
+		<van-skeleton title row="3" loading="{{ loading }}">
+			<view class="first" hover-class="weui-cell_active" bindtap="openPingtai">
+				<view class="left">平台保障</view>
+				<view class="center">闪电退款 · 48小时无忧退 · 坏果包退</view>
+				<text class="iconfont icon-gengduo1"></text>
+			</view>
+			<view url="" class="second" hover-class="weui-cell_active" bindtap="openPeisong">
+				<view class="left">配送方式</view>
+				<view class="center">
+					<text> 自提 </text>
+					<text> 配送 </text>
+					<text> 快递 </text>
+				</view>
+				<view class="iconfont icon-gengduo1"></view>
+			</view>
+			<view bindtap="choseLocation" class="third" hover-class="weui-cell_active">
+				<view class="left">提货地址</view>
+				<view class="center">
+					{{storeInfo.shopAddress}}</view>
+				<view class="iconfont icon-gengduo1"></view>
+			</view>
+		</van-skeleton>
+	</view>
+
+	<!-- 这里是商家 -->
+	<view class="shop">
+		<van-skeleton title row="3" loading="{{ loading }}">
+			<view class="store">
+				<navigator class="storeimg" url="/pages/shopDetail/shopDetail?storeId={{storeInfo.id}}">
+					<image src="{{storeInfo.logoUrl}}?x-oss-process=image/resize,w_120" mode="aspectFill"></image>
+				</navigator>
+				<navigator class="storetitle" url="/pages/shopDetail/shopDetail?storeId={{storeInfo.id}}">
+					<text>{{storeInfo.storeName}}</text>
+				</navigator>
+				<navigator class="lian" url="/pages/shopDetail/shopDetail?storeId={{storeInfo.id}}">
+					<text>联系商家</text>
+				</navigator>
+				<navigator class="guang" url="/pages/shop/shop?storeId={{storeInfo.id}}">
+					<text>进店逛逛</text>
+				</navigator>
+			</view>
+			<view class="tuijian">
+					<text>商品推荐</text>
+				</view>
+
+			<view class="recommend">
+				<view class="shop-item" wx:for="{{recommendList}}" wx:key="shopItem" bindtap="goDetail" data-id="{{item.id}}" wx:if="{{index < 3}}">
+					<view class="picture">
+						<image src="{{item.cover}}?x-oss-process=image/resize,w_120" mode="aspectFill"></image>
+					</view>
+					<view class="title">
+						<text>{{item.name}}</text>
+					</view>
+					<view class="price">
+						<text>￥{{item.price}}</text>
+					</view>
+				</view>
+			</view>
+		</van-skeleton>
+	</view>
+
+	<!-- 商品评价 -->
+	<view class="review">
+		<van-skeleton title row="2" loading="{{ loading }}">
+			<view class="evaluate">
+				<view class="pingjia">
+					<text>商品评价</text>
+				</view>
+				<navigator class="see" url="/pages/reviewlist/reviewlist?goodsId={{detailsList.id}}">
+					<text>查看全部</text>
+					<text class="iconfont icon-gengduo1"></text>
+				</navigator>
+			</view>
+			<!-- <view> -->
+
+			<view class="no_review" wx:if="{{reList}}">
+				<image src="../../images/no_revre.png"></image>
+				<text>该商品暂无评价内容~</text>
+			</view>
+			<view class="user" wx:else>
+				<view class="mann">
+					<view class="avatar">
+						<image mode="aspectFill" src="../../images/zhichao.png" />
+					</view>
+					<view class="center">
+						<text class="strong">不**么</text>
+						<text class="light">{{item.createTime}}| 规格：180g</text>
+					</view>
+					　　<view class="rightCont">
+						<block>
+							<view class="list-item">
+								<image class="block" src="{{item}}?x-oss-process=image/resize,w_120" bindtap="evaluateLv"
+									data-index="{{index}}"></image>
+							</view>
+						</block>
+					</view>
+				</view>
+				<view class="details">
+					<text class="text">{{item.comment}}</text>
+				</view>
+			</view>
+			<!-- </view> -->
+		</van-skeleton>
+	</view>
+
+	<view class="detail">
+		<van-collapse value="{{ activeNames }}" bind:change="detailOn">
+			<van-collapse-item title="商品详情" name="1" value="查看全部">
+				<video src="{{detailsList.videoUrl}}" show-progress="true" show-fullscreen-btn="true"
+					show-center-play-btn="true" object-fit="contain" show-mute-btn="true"
+					wx:if="{{detailsList.videoUrl}}"></video>
+				<rich-text class="rich-box" nodes="{{detailsList.description}}"></rich-text>
+			</van-collapse-item>
+		</van-collapse>
+	</view>
+
+	<scroll-view scroll-y bindscrolltolower="commitScrollBottom">
+		<view wx:for="{{commitData.list}}" wx:key="commitData">
+			<component-talk t-type="0" t-list="{{item}}"></component-talk>
+		</view>
+	</scroll-view>
+
+	<!-- half-screen-dialog半屏弹窗 -->
+	<van-popup show="{{ pingtai }}" round position="bottom" bind:close="close">
+		<view class="main">
+			<view class="hd">
+				<strong class="title">平台保障</strong>
+			</view>
+			<view class="bd">
+				<view class="flex">
+					<text class="iconfont icon-chenggong"></text>
+					<text class="text">闪电退款</text>
+				</view>
+				<view class="flex">
+					<text class="iconfont icon-chenggong"></text>
+					<text class="text">48小时无忧退</text>
+				</view>
+				<view class="flex">
+					<text class="iconfont icon-chenggong"></text>
+					<text class="text">坏果包赔</text>
+				</view>
+			</view>
+			<view class="ft">
+				<button class="close-btn" bindtap="close">关闭</button>
+			</view>
+		</view>
+	</van-popup>
+
+	<!-- <van-cell title="配送弹出层" is-link bind:click="showPopup" /> -->
+	<van-popup show="{{ peisong }}" round position="bottom" bind:close="close">
+		<view class="main">
+			<view class="hd">
+				<view class="hd__side">
+				</view>
+				<view class="hd__main">
+					<strong class="title">配送方式</strong>
+				</view>
+			</view>
+			<view class="screen">
+				<view class="title">
+					<text class="iconfont icon-chenggong"></text>
+					<text class="text">自提</text>
+				</view>
+				<view class="des"><text class="descr">我们有实体店铺，提供提货地址方便上门店提货</text></view>
+				<view class="title">
+					<text class="iconfont icon-chenggong"></text>
+					<text class="text">配送</text>
+				</view>
+				<view class="des"><text class="descr">选择同城配送，指定时间收货，享受送货到家或者自助 提货专柜</text></view>
+				<view class="title">
+					<text class="iconfont icon-chenggong"></text>
+					<text class="text">快递</text>
+				</view>
+				<view class="des"><text class="descr">48小时内发货，最快一天达</text></view>
+			</view>
+			<view class="ft">
+				<button class="close-btn" bindtap="close">关闭</button>
+			</view>
+		</view>
+	</van-popup>
+</view>

@@ -1,0 +1,122 @@
+{
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": false,
+    "scopeDataCheck": false,
+    "uglifyFileName": true,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": true,
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./miniprogram_npm/"
+      }
+    ],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.17.0",
+  "appid": "wxfcf71d92d4b7471e",
+  "projectname": "%E6%99%BA%E8%B6%85%E5%95%86%E4%BA%92%E9%80%9A",
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/type/type",
+          "pathName": "pages/type/type",
+          "query": "",
+          "scene": 1001
+        },
+        {
+          "name": "个人中心",
+          "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/userInfo/userInfo",
+          "pathName": "pages/userInfo/userInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/details/details",
+          "pathName": "pages/details/details",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/shop/shop",
+          "pathName": "pages/shop/shop",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/order/order",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/place/placeList/placeList",
+          "pathName": "pages/place/placeList/placeList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/review/review",
+          "pathName": "pages/review/review",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/codePay/codePay",
+          "pathName": "pages/codePay/codePay",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

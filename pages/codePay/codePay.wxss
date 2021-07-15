@@ -1,0 +1,241 @@
+page {
+   background-color: #F3F4F8;
+   width: 100vw;
+   box-sizing: border-box;
+}
+
+.top {
+   background: #ffffff;
+}
+
+.pad {
+   width: 90%;
+   padding: 5%;
+}
+
+.store {
+   font-size: 34rpx;
+   color: #333333;
+   height: 88rpx;
+   display: flex;
+   align-items: center;
+}
+
+.store .iconfont {
+   color: #e54148;
+   font-size: 40rpx;
+   margin-right: 20rpx;
+}
+
+.top .amount {
+   background: #FCFCFC;
+   border: 2rpx solid #EEEEEE;
+   border-radius: 8rpx;
+   padding: 40rpx;
+}
+
+.center {
+   background: #ffffff;
+   margin-top: 20rpx;
+}
+
+.center .coupon {
+   display: flex;
+   justify-content: space-between;
+   height: 80rpx;
+}
+
+.coupon .gay {
+   color: #999999;
+   font-size: 30rpx;
+}
+
+.center .goldcoin {
+   display: flex;
+   justify-content: space-between;
+   height: 80rpx;
+}
+
+.center .pay {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.center .pay .color {
+   color: #e54148;
+   font-weight: 600;
+}
+
+.bottom {
+   display: flex;
+   align-items: center;
+}
+
+.bottom button {
+   color: #ffffff;
+   background: linear-gradient(to right, #e44158, #e54148);
+   border: 1rpx solid #e54148;
+   border-radius: 54rpx;
+   font-weight: 600;
+   width: 80%;
+}
+
+.tag {
+   color: #E66D2E;
+   font-size: 28rpx;
+}
+
+
+.explain {
+   display: flex;
+   justify-content: flex-end;
+   margin-right: 40rpx;
+   font-size: 30rpx;
+   color: #999999;
+   margin-top: 40rpx;
+   align-items: flex-end;
+}
+
+.explain .iconfont {
+   margin-right: 10rpx;
+}
+
+checkbox .wx-checkbox-input {
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+}
+
+.money-item {
+   display: flex;
+   overflow: hidden;
+   font-size: 0;
+   border-bottom: 2rpx solid #F6F5F5;
+   background: #FCFCFC;
+   border: 2rpx solid #EEEEEE;
+   border-radius: 8rpx;
+   padding: 40rpx;
+}
+
+.title {
+   font-size: 32rpx;
+   color: #333;
+}
+
+.money-item input {
+   flex: 1;
+   font-size: 34rpx;
+   color: #333333;
+   text-align: right;
+   position: relative;
+   margin-right: 20rpx;
+}
+
+.money-item input::after {
+   content: "";
+   width: 1px;
+   height: 50rpx;
+   background: #ffe8d2;
+   position: absolute;
+   right: -100rpx;
+   top: 50%;
+   transform: translate(0%, -50%);
+   animation: flash 1s 0s infinite;
+}
+
+.weui-cells {
+   font-size:30rpx;
+   margin-bottom: 40rpx;
+ }
+ 
+ .hd__main {
+   text-align: center;
+   line-height: 88rpx;
+ }
+ .hd__main .title {
+   color: #999999;
+   font-size: 32rpx;
+ }
+
+
+.weui-half-screen-dialog {
+   padding: 10rpx 32rpx 40rpx 32rpx;
+  }
+
+.list {
+   width: 100%;
+   height: auto;
+   margin-bottom: 40rpx;
+}
+
+.list .check {
+   height: 60rpx;
+}
+
+.flexbox {
+   display: flex;
+   height: 120rpx;
+   border: 2px solid #EEEEEE;
+   border-radius: 24px;
+   align-items: center;
+   margin: 20rpx 0;
+   padding: 30rpx;
+  }
+ 
+  .flexbox .leftbox {
+   flex: 3;
+ }
+ 
+ .flexbox .leftbox .consumer {
+   color: #ee4C40;
+   font-size: 34rpx;
+   height: 48rpx;
+ }
+ 
+ .flexbox .leftbox .reduction {
+   font-size: 28rpx;
+   height: 48rpx;
+ }
+ 
+ .flexbox .centerbox {
+   flex: 7;
+ }
+ 
+ 
+ .flexbox .centerbox .title {
+   font-size: 30rpx;
+   height: 48rpx;
+ }
+ 
+ .flexbox .centerbox .validity {
+   font-size: 24rpx;
+   
+   height: 48rpx;
+ }
+ 
+ .flexbox .centerbox .validity text {
+   font-size: 24rpx;
+ }
+
+.list .box {
+   height: 260rpx;
+   width: 96%;
+   display: flexbox;
+}
+.list .box .line {
+   display: block;
+   line-height: 56rpx;
+}
+.list .box .line text {
+   font-size: 30rpx;
+   color: #545454;
+}
+
+.closeExplain {
+   background: #e54148;
+   color: #ffffff;
+   border-radius: 56rpx;
+   font-size: 32rpx;
+   line-height: 78rpx;
+
+}

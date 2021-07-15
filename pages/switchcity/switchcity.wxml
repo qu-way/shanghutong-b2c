@@ -1,0 +1,34 @@
+<!-- 历史热门城市 -->
+<!-- <view class="searchLetter touchClass">
+    <view wx:for="{{openCityList}}" style="color:#333333;font-size:20rpx;" wx:key="index" data-letter="{{item.letter}}" catchtouchend="clickLetter">
+        {{item.letter}}
+    </view>
+</view>
+<block wx:if="{{isShowLetter}}">
+    <view class="showSlectedLetter">{{showLetter}}</view>
+</block> -->
+
+<!-- 历史选择城市 -->
+<!-- <scroll-view scroll-y="true" style="height:{{winHeight}}px" bindscroll="bindScroll" scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}"> -->
+
+<!-- 当前定位城市 -->
+<view class="current">
+    <text class="opencity opencity-common">当前定位城市</text>
+    <view class="curCity">
+        <text class="iconfont icon-dingwei-x"></text>
+        <text class="my-curCity" bindtap="bindOpenCity" data-cityName="{{locationCity}}">{{locationCity}}</text>
+    </view>
+</view>
+<!-- 其他开通城市 -->
+<view class="division">
+    <text class="opencity opencity-common">其他开通城市</text>
+    <van-index-bar>
+        <van-index-anchor wx:for="{{openCityList}}" wx:key="index" index="{{item.letter}}" use-slot="{{true}}" wx:if="{{item.data.length>0}}">
+            {{item.letter}}
+            <van-cell wx:for="{{item.data}}" wx:for-item="items" wx:key="index" data-id="{{items.code}}"
+                data-cityName="{{items.cityName}}" title="{{items.cityName}}"
+                bindtap="bindOpenCity" />
+        </van-index-anchor>
+        
+    </van-index-bar>
+</view>

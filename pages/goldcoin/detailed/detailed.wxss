@@ -1,0 +1,99 @@
+/* pages/goldcoin/detailed/detailed.wxss */
+Page {
+   background-color: #F3F4F8;
+}
+.ba {
+   width: auto;
+   height: auto;
+}
+.containe {
+   background-color: #ffffff;
+   margin: 20rpx;
+   padding: 12rpx 20rpx;
+   border-radius: 20rpx;
+}
+.store {
+   line-height: 48rpx;
+   height: 48rpx;
+}
+.store .title {
+   color: #333333;
+   font-size: 32rpx;
+}
+.store .iconfont {
+   color: #333333;
+   font-size: 36rpx;
+}
+.shop {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+}
+.shop .left {
+   flex: 1;
+   margin-right: 20rpx;
+}
+.shop .left image {
+   width: 180rpx;
+   height: 138rpx;
+   border-radius: 4rpx;
+}
+.shop .right {
+   flex: 5;
+}
+.titl {
+   color: #333333;
+   font-size: 30rpx;
+   line-height: 68rpx;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   width: 470rpx;
+}
+.shop .right .specification {
+   margin-left: 10rpx;
+   background-color: #F3F4F8;
+   width: 72rpx;
+   padding-left: 12rpx;
+   line-height: 48rpx;
+   border-radius: 4rpx;
+}
+.specification text {
+   color: #717171;
+   font-size: 24rpx;
+}
+.bottom {
+   display: flex;
+   justify-content: space-between;
+}
+
+.bottom .amount {
+   line-height: 56rpx;
+}
+
+.amount .coin {
+   color: #717171;
+   font-size: 26rpx;
+}
+
+.amount .num {
+   color: #3c3c3c;
+   font-size: 28rpx;
+}
+
+.shop .right .retu {
+   line-height: 56rpx;
+   display: flex;
+}
+
+.retu .iconfont {
+   font-size: 62rpx;
+   color: #F9AB10;
+   text-align: center;
+}
+.retu .tex {
+   font-size: 30rpx;
+   color: #e54148;
+   text-align: center;
+}

@@ -1,0 +1,80 @@
+<view class="pading">
+<view class="step">
+  <view class="title">请等待商家处理啊</view>
+  <!-- <view class="dec">还剩23时48分27秒</view> -->
+  <view class="steps">
+    <van-steps steps="{{ stepsData }}" active-color="#e54148" active="{{ stepStatus }}" />
+  </view>
+  <view class="stepBottom">
+    <view class="main">
+      <text class="">您已成功发起退货退款申请，请耐心等待商家处理</text>
+    </view>
+    <view class="secondary">
+      <text class="">商家同意或者超时未处理，系统将自动同意该请求。 如果商家拒绝，您可以修改退款申请后再次发起，商家会重新处理。</text>
+    </view>
+  </view>
+</view>
+
+<view class="detail">
+  <view class="store">
+    <view class="storeName">
+      <image src="https://img.zcool.cn/community/01a2485545680f0000019ae9da087c.jpg@1280w_1l_2o_100sh.jpg"></image>
+      <text>{{refundDetail.storeInfo.storeName}}</text>
+      <text class="iconfont icon-gengduo"></text>
+    </view>
+    <view class="contact">
+      <text>联系商家</text>
+    </view>
+  </view>
+  <view>
+    <view class="card-content" bindtap="goOrderDetail" data-order-id="{{i.orderId}}">
+      <view class="content-wrap">
+        <view class="flex-item">
+          <image height="60" src="{{refundDetail.storeInfo.logoUrl}}" iClass="show-img mar-right-10" lazyLoad="true"
+            loadImage="{{refundDetail.storeInfo.logoUrl}}" width="60"></image>
+        </view>
+        <view class="i-flex-item">
+          <view class="name bold">
+            {{refundDetail.goods.name}}
+          </view>
+          <view class="mount">{{refundDetail.goodsSpecification.goodsSpecificationName}}</view>
+          <view class="bottom-info">
+            <text>¥{{refundDetail.goods.price}}</text>
+            <text>x{{refundDetail.quantity}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="datas">
+    <view class="orderNum">
+      <view class="number">
+        <text>订单编号：</text>
+        <text>{{refundDetail.orderId}}</text>
+      </view>
+      <view class="copy" data-order-id="{{refundDetail.orderId}}" bindtap="copyNumbers">
+        <text>复制</text>
+      </view>
+    </view>
+    <view class="otherDetail">
+      <text class="left">退款金额：</text>
+      <text class="price">{{refundDetail.refundedPrice}}</text>
+    </view>
+    <view class="otherDetail">
+      <text class="left">退款原因：</text>
+      <text>{{refundDetail.reason}}</text>
+    </view>
+    <view class="otherDetail">
+      <text class="left">申请时间：</text>
+      <text>{{refundDetail.orderInfo.createTime}}</text>
+    </view>
+  </view>
+</view>
+</view>
+
+
+<view class="bottom" wx:if="{{item.status===0 || item.status===4}}">
+  <view class="revoke" bindtap="refundcancel">撤销申请</view>
+  <view class="modify" data-order-id="{{refundDetail.orderId}}" data-order-item-id="{{refundDetail.orderItemId}}" bindtap="goApplyRefund">修改申请</view>
+</view>

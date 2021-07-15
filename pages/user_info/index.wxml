@@ -1,0 +1,70 @@
+<view>
+  <van-notify id="van-notify" />
+  <van-cell-group>
+    <van-cell title="头像" value="{{avatar}}" bind:click="uploadpic" is-link>
+      <image slot="icon2" src="{{avatar}}"
+        style="margin-right: 6px;vertical-align: middle;width:80rpx; height: 80rpx;border-radius: 100rpx;"></image>
+    </van-cell>
+    <van-cell title="昵称" value="{{nickname}}" bindtap="openNick" is-link />
+    <van-cell title="联系电话" value="{{telephone}}" bindtap="openPhone" is-link />
+  </van-cell-group>
+	<!-- 头像弹窗 -->
+	<van-popup show="{{ isNick }}" round position="bottom" bind:close="closeNick">
+		<view class="weui-half-screen-dialog">
+			<view class="hd">
+				<view class="hd__main">
+					<strong class="title">修改昵称</strong>
+				</view>
+      </view>
+      <form bindsubmit="formSubmit1">
+			<view class="mainbd">
+				<textarea class="weui-textarea" value="{{nickname.name}}" name="nickName" maxlength="30" confirm-type="done"></textarea>
+			</view>
+			<view class="ft">
+        <button class="btn1" bindconfirm="textConfirm" bindtap="closeNick">取消</button>
+        <button class="btn2" formType="submit" data-nick-name="{{nickname.name}}">确认</button>
+      </view>
+      </form>
+		</view>
+  </van-popup>
+  	<!-- 手机弹窗 -->
+	<van-popup show="{{ isPhone }}" round position="bottom" bind:close="closePhone">
+		<view class="weui-half-screen-dialog">
+			<view class="hd">
+				<view class="hd__main">
+					<strong class="title">修改联系电话</strong>
+				</view>
+      </view>
+      <form bindsubmit="formSubmit2">
+			<view class="mainbd">
+				<textarea class="weui-textarea" value="{{telephone.name}}" name="contactPhone" maxlength="30" confirm-type="done"></textarea>
+			</view>
+			<view class="ft">
+        <button class="btn1" bindconfirm="textConfirm" bindtap="closePhone">取消</button>
+        <button class="btn2" formType="submit">确认</button>
+      </view>
+      </form>
+		</view>
+  </van-popup>
+  	<!-- 头像弹窗 -->
+	<!-- <van-popup show="{{ isAvatar }}" round position="bottom" bind:close="closeAvatar">
+		<view class="weui-half-screen-dialog">
+			<view class="hd">
+				<view class="hd__main">
+					<strong class="title">修改昵称</strong>
+				</view>
+      </view>
+      <form bindsubmit="formSubmit1">
+			<view class="mainbd">
+				<textarea class="weui-textarea" name="avatar" maxlength="30" confirm-type="done"></textarea>
+			</view>
+			<view class="ft">
+        <button class="btn1" bindconfirm="textConfirm" bindtap="closeAvatar">取消</button>
+        <button class="btn2" formType="submit">确认</button>
+      </view>
+      </form>
+		</view>
+  </van-popup> -->
+  
+<authorize bind:onLoadFun="onLoadFun"></authorize>
+</view>

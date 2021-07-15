@@ -1,0 +1,13 @@
+{
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh":true,
+    "component": true,
+    "usingComponents": {
+        "dropdownmenu": "/components/dropdownmenu/dropdownmenu",
+        "skeleton": "/components/skeleton/index",
+        "van-skeleton": "@vant/weapp/skeleton/index"
+      }
+}

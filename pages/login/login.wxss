@@ -1,0 +1,73 @@
+page {
+  background: #fff;
+  width: 92%;
+  margin-left: 4%;
+}
+
+.sigin .iamg {
+  height: 160rpx;
+  margin-top: 140rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sigin .iamg .iconfont {
+  font-size: 90rpx;
+  color: #4b6af9;
+}
+
+.sigin .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sigin .content text {
+  font-size: 33rpx;
+  font-weight: bold;
+  color: #000;
+}
+
+.sigin .content .zhichao {
+  font-size: 44rpx;
+  color: #E54148;
+}
+
+.sigin .phone {
+  width: 80%;
+  height: 88rpx;
+  background: linear-gradient(to right, #e44158, #e54148);
+  border-radius: 44rpx;
+  margin: 127rpx 75rpx 0 75rpx;
+}
+
+button {
+  background: none;
+  color: #fff;
+  border-radius: 0;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+button::after {
+  border: none;
+}
+.bottom {
+  position: fixed;
+  bottom: 20rpx;
+  width: 88%;
+  margin-left: 4%;
+}
+
+.bottom .xieyi {
+  text-align: center;
+}
+.bottom .xieyi view {
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.bottom .xieyi text {
+  color: #ff1616;
+}

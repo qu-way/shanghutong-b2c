@@ -1,0 +1,40 @@
+<view class="container" style="height: 100%;">
+  <view class="search-header">
+    <view class="input-box">
+      <text class="iconfont icon-xinbaniconshangchuan-"></text>
+      <input name="input" class="keywrod" bindinput="formInputSearch" focus="true" value="{{keyword}}"
+        confirm-type="search" bindconfirm="onKeywordConfirm" confirm-type="search"
+        placeholder="{{defaultKeyword.keyword}}" />
+      <image src="../../images/search-dele.png" class="del" wx:if="{{keyword}}" bindtap="clearKeyword"></image>
+    </view>
+    <view class="right" bindtap="searchProducts" data-keyword="{{defaultKeyword.keyword}}">搜索</view>
+  </view>
+  <view class="no-search" wx:if="{{!searchStatus}}">
+    <view class='tag-wrap' wx:if="{{wxSearchData.length>0}}">
+      <view class='tag-title'>
+        <text>搜索历史</text>
+        <text class="text-del" bindtap='clearHis'>清空</text>
+      </view>
+      <view class='tag-list'>
+        <view class='item' wx:for="{{wxSearchData}}" wx:key="index" data-name='{{item.name}}' bindtap='onKeywordTap'>
+          {{item.name}}</view>
+      </view>
+    </view>
+
+    <view class="shelper-list" wx:if="{{keyword}}">
+      <view class="item" hover-class="navigator-hover" wx:for="{{helpKeyword}}" bindtap="onKeywordTap"
+        data-keyword="{{item}}" wx:key="id">{{item}}</view>
+    </view>
+  </view>
+  <view class="shop">
+    <view class="shop_contain" data-store-id="{{item.storeId}}" bindtap="toShop" wx:for="{{goodsList}}"
+      wx:for-index="index" wx:for-item="item" wx:key="id">
+      <van-card thumb-mode="aspectFill" price="{{item.price}}" title="{{item.name}}" thumb="{{item.cover}}?x-oss-process=image/resize,w_200" add="iconfont icon-tianjia" thumb-class="width:20prx" style="width:100%;">
+      </van-card>
+    </view>
+  </view>
+  <view class="empty" wx:if="{{!goodsList.length && searchStatus}}">
+    <image src="../../images/no-search.png"></image>
+    <text>没找到，换个关键字试试</text>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+/* pages/az/az.wxss */
+.shouquan {
+   width: 200rpx;
+   margin-top: 200rpx;
+   height: 100rpx;
+}

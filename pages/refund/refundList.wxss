@@ -1,0 +1,145 @@
+page {
+  background-color: #F3F4F8;
+}
+.after-sales {
+  width: 100%;
+}
+.after-sales .afterlist {
+  width: 702rpx;
+  height: 465rpx;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  margin: 20rpx 24rpx;
+}
+.after-sales .afterlist .shop {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.after-sales .afterlist .shop .shop-name {
+  padding-top: 12rpx;
+}
+.after-sales .afterlist .shop .shop-name text {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-left: 23rpx;
+}
+.after-sales .afterlist .shop .shop-name image {
+  width: 13rpx;
+  height: 18rpx;
+  margin-left: 12rpx;
+}
+.after-sales .afterlist .shop .shop-status {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #E54148;
+  padding-top: 25rpx;
+  margin-right: 25rpx;
+}
+.after-sales .afterlist .commodity {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.after-sales .afterlist .commodity .img {
+  flex: 2;
+  width: 180rpx;
+  height: 137rpx;
+}
+.after-sales .afterlist .commodity .img image {
+  width: 100%;
+}
+.after-sales .afterlist .commodity .commoditylist {
+  flex: 5;
+}
+.after-sales .afterlist .commodity .commoditylist .commodity-name {
+  width: 450rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.after-sales .afterlist .commodity .commoditylist .commodity-weight {
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background: #F3F4F8;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #999;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.after-sales .afterlist .commodity .commoditylist .commodity-price {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-top: 45rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+.after-sales .afterlist .commodity .commoditylist .commodity-price .quantity {
+  margin-right: 35rpx;
+}
+.after-sales .afterlist .amount {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+.after-sales .afterlist .amount .payment {
+  margin-right: 70rpx;
+}
+.after-sales .afterlist .amount .payment .payment-price {
+  color: #E54148;
+}
+.after-sales .afterlist .amount .refund {
+  margin-right: 35rpx;
+}
+.after-sales .afterlist .amount .refund .refund-price {
+  color: #E54148;
+}
+.after-sales .afterlist .operation {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+}
+.after-sales .afterlist .operation .delete {
+  width: 200rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  background: #FFFFFF;
+  border: 2rpx solid #CCCCCC;
+  border-radius: 34rpx;
+  margin-right: 20rpx;
+}
+.after-sales .afterlist .operation .delete showBtn {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.after-sales .afterlist .operation .sales {
+  width: 200rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  background: #FFFFFF;
+  border: 2rpx solid #CCCCCC;
+  border-radius: 34rpx;
+  margin-right: 20rpx;
+}

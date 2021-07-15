@@ -1,0 +1,111 @@
+<view class="pageContainer">
+  <view class="pading">
+    <view class="order">
+      <view class="cart-location-wrap">
+        <text class="iconfont icon-dingwei"></text>
+        <view class="cart-location-content">
+          <block>
+            <view class="cart-user-info">
+              <view>
+                <text>{{orderDetails.receiveName}}</text>
+                <text>{{orderDetails.receivePhone}}</text>
+              </view>
+            </view>
+            <view class="cart-location-info">
+              <text>{{orderDetails.receiveProvince}}</text>
+              <text>{{orderDetails.receiveCity}}</text>
+              <text>{{orderDetails.receiveArea}}</text>
+              <text>{{orderDetails.receiveAddress}}</text>
+            </view>
+          </block>
+  
+        </view>
+      </view>
+      <!-- 订单项目 -->
+      <block>
+        <view class="card">
+          <view class="card-header" slot="header" wx:for="{{orderLists}}" wx:for-item="item" wx:for-index="index"
+            wx:key="id" wx:if="{{index===1}}">
+            <view class="head">
+              <text class="title">{{item.storeName}}</text>
+              <text class="iconfont icon-gengduo1"></text>
+            </view>
+            <view class="bold {{item.status_id==3?'red':'gray'}}" style="{{tabs.id==3}}">
+              {{item.status_name}}
+            </view>
+          </view>
+          <view wx:for="{{orderLists}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+            <view class="card-content" slot="content" >
+              <view class="content-wrap">
+                <view class="flex-item">
+                  <image height="60" src="{{item.merchantGoodsCover}}?x-oss-process=image/resize,w_120" iClass="show-img mar-right-10" lazyLoad="true"
+                    loadImage="{{item.goods_list[0].merchantGoodsCover}}?x-oss-process=image/resize,w_120" width="60"></image>
+                </view>
+                <view class="i-flex-item">
+                  <view class="name bold">
+                    {{item.merchantGoodsName}}
+                  </view>
+                  <view class="mount">{{item.merchantGoodsSpecName}}</view>
+                  <view class="bottom-info">
+                    <text>¥{{item.merchantGoodsPrice}}</text>
+                    <text>x{{num}}</text>
+                  </view>
+                  <view class="total">
+                    <text class="left">共{{num}}件商品</text>
+                    合计：
+                    <text class="right">￥{{item.totalPrice}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="bot">
+            <view class="li">
+              <text>商品总价</text>
+              <text>￥{{orderDetails.totalPrice}}</text>
+            </view>
+            <view class="li">
+              <text>配送方式</text>
+              <text>{{orderDetails.logisticsType}}</text>
+            </view>
+            <view class="li">
+              <text>优惠券</text>
+              <text>-￥{{orderDetails.discountPrice}}</text>
+            </view>
+            <view class="li">
+              <text>币抵扣</text>
+              <text>-￥{{orderDetails.couponsMoney}}</text>
+            </view>
+            <view class="paid">
+              <text class="deepen">实付款</text>
+              <text class="goln">￥{{orderDetails.payPrice}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block>
+        <view class="bot-border">
+          <view class="pad">
+            <view class="number">
+              <text>订单编号</text>
+              <text>{{orderDetails.id}}</text>
+            </view>
+            <view class="creation-time">
+              <text>创建时间</text>
+              <text>{{orderDetails.createTime}}</text>
+            </view>
+            <view class="channel">
+              <text>下单渠道</text>
+              <text>线上</text>
+            </view>
+          </view>
+        </view>
+      </block>
+  
+    </view>
+  </view>
+  <view class="bottom" wx:for="{{orderLists}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+    <view class="revoke" bindtap="cancelOrder">删除订单</view>
+    <view class="modify" bindtap="goOrderConfirm" data-store-id="{{item.storeId}}">再次购买</view>
+  </view>
+</view>

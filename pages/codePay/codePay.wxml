@@ -1,0 +1,118 @@
+<view class="page-section">
+   <van-notify id="van-notify" />
+   <view class="top">
+      <view class="pad">
+         <view class="store">
+            <text class="iconfont icon-dianpu1"></text>
+            <text class="">{{storeName}}</text>
+         </view>
+         <view class="money-item">
+            <view class="title">消费金额</view>
+            <input class='money' min="0" step="0.01" type="digit" placeholder="￥0.00" maxlength="15"
+               bindinput="getMoney" bindblur="bindIptBlur" 
+               
+               placeholder-style="color:#cccccc"></input>
+         </view>
+      </view>
+   </view>
+   <view class="center">
+      <view class="pad">
+         <view class="coupon" bindtap="openCoupon">
+            <view>优惠券</view>
+            <view class="gay">
+               <text>暂无可用</text>
+               <text class="iconfont icon-gengduo1"></text>
+            </view>
+         </view>
+         <!-- <view class="goldcoin">
+            <view class="">消费券：
+               <text>{{realCoupons}}</text>
+            </view>
+            <label catchtap='consumerTap'>
+               <radio color="#e54148" value="1" checked="{{checked}}" />
+            </label>
+         </view> -->
+         <view class="goldcoin">
+            <view>可使用币抵扣：
+               <text>{{realCoupons}}</text>
+            </view>
+            <label catchtap='consumerTap'>
+               <radio color="#e54148" value="1" checked="{{checked}}" disabled="{{canRadio}}" />
+            </label>
+         </view>
+         <view class="pay">
+            <text>实付金额</text>
+            <text class="color">￥{{realMoney}}</text>
+         </view>
+      </view>
+   </view>
+
+   <view class="tag pad">* 买单仅限到店支付，请确认金额后提交。</view>
+   <view class="bottom">
+      <button class="" hover-class="button-hover" bindtap="payHandler">确认买单</button>
+   </view>
+   <view class="explain" bindtap="openExplain">
+      <text class="iconfont icon-yiwenshuoming"></text>
+      <text class="ex" bindtap="openExplain">优惠说明</text>
+   </view>
+</view>
+
+<!-- 优惠券half-screen-dialog半屏弹窗 -->
+
+<van-popup show="{{ coupon }}" round position="bottom" bind:close="close">
+   <view class="weui-half-screen-dialog">
+      <view class="hd">
+         <view class="hd__main">
+            <strong class="title">优惠券</strong>
+         </view>
+      </view>
+      <view class="list">
+         <radio-group bindchange="radioChange">
+            <label class="check" wx:for="{{items}}" wx:key="value">
+               <view class="flexbox">
+                  <view class="leftbox">
+                     <view class="consumer">￥10</view>
+                     <view class="reduction">满15元可用</view>
+                  </view>
+                  <view class="centerbox">
+                     <view class="title">仅限指定商品使用</view>
+                     <view class="validity">
+                        <text>有效期：</text>
+                        <text>2020.12.11-2020.12.13</text>
+                     </view>
+                  </view>
+                  <view class="hd2">
+                     <radio value="{{item.value}}" color="#e54148" checked="true" />
+                  </view>
+               </view>
+            </label>
+            <button class="confirm" catchtap="confirm">确认</button>
+         </radio-group>
+      </view>
+   </view>
+</van-popup>
+
+<!-- 优惠说明 -->
+<van-popup show="{{ explain }}" round position="bottom" bind:close="close">
+   <view class="weui-half-screen-dialog">
+      <view class="hd">
+         <view class="hd__main">
+            <strong class="title">优惠券</strong>
+         </view>
+      </view>
+      <view class="list">
+         <view class="box">
+            <view class="line">
+               <text class="">1.优惠线上线下可同时使用；</text>
+            </view>
+            <view class="line">
+               <text>2.优惠默认优先使用抵用币，其次优惠券可选择是否 使用；</text>
+            </view>
+            <view class="line">
+               <text>3.优惠资格不可赠送或转让，解释权归平台所有。</text>
+            </view>
+         </view>
+      </view>
+      <button class="closeExplain" catchtap="close">关闭</button>
+   </view>
+</van-popup>

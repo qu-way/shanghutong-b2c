@@ -1,0 +1,60 @@
+{
+   "setting": {},
+   "condition": {
+      "plugin": {
+         "list": []
+      },
+      "game": {
+         "list": []
+      },
+      "gamePlugin": {
+         "list": []
+      },
+      "miniprogram": {
+         "list": [
+            {
+               "name": "pages/media/media",
+               "pathName": "pages/media/media",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/college/college",
+               "pathName": "pages/college/college",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/college/college",
+               "pathName": "pages/college/college",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/college/college",
+               "pathName": "pages/college/college",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/user_phone/index",
+               "pathName": "pages/user_phone/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/user_setup/index",
+               "pathName": "pages/user_setup/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/review/review",
+               "pathName": "pages/review/review",
+               "query": "",
+               "scene": null
+            }
+         ]
+      }
+   }
+}

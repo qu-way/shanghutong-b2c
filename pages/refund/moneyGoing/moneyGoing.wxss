@@ -1,0 +1,253 @@
+page {
+  background-color: #F3F4F8;
+  width: 100vw;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.moneygoing {
+  width: 100%;
+}
+.moneygoing .moeny-status {
+  background: #FFFFFF;
+  border-radius: 24rpx 24rpx 0 0;
+  padding: 20rpx;
+}
+.moneygoing .moeny-status .details {
+  text-align: center;
+}
+ .details .details-name {
+  font-size: 32rpx;
+  color: #000;
+}
+.details .details-price {
+  color: #000;
+}
+.details-price .i {
+  font-size: 32rpx;
+}
+.details-price .price {
+  font-size: 34rpx;
+}
+.details-price .price {
+  font-size: 52rpx;
+}
+.moeny-status .account {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+.account text {
+  color: #999;
+}
+.account .user {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.account .user .ime {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 9rpx;
+}
+.account .user .ime image {
+  width: 100%;
+}
+.user .user-name {
+  text-align: center;
+  color: #333;
+}
+ .payment {
+  display: flex;
+  justify-content: space-between;
+  line-height: 48rpx;
+  font-size: 24rpx;
+}
+ .payment text {
+  color: #999;
+}
+ .payment .weixin {
+  color: #333;
+}
+ .moeny-status .bankcard {
+  display: flex;
+  justify-content: space-between;
+  line-height: 48rpx;
+  font-size: 24rpx;
+}
+ .bankcard text {
+  color: #999;
+}
+ .bankcard .card {
+  color: #24B512;
+}
+.moneygoing .order-price {
+  background: #FFFFFF;
+  border-radius: 0 0 24rpx 24rpx;
+  padding: 20rpx;
+}
+.moneygoing .order-price .order {
+  display: flex;
+  position: relative;
+}
+.order .iconlist {
+  flex: 1;
+}
+.order .iconlist .icon {
+  width: 20rpx;
+  height: 20rpx;
+  background: #ccc;
+  border-radius: 50%;
+}
+.iconlist .icon image {
+  width: 100%;
+}
+ .iconlist .no-icon {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+ .order .list_centent {
+  flex: 12;
+  font-size: 24rpx;
+  color: #999;
+}
+.list_centent .tips {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  box-sizing: border-box;
+}
+.list_centent .tips .status {
+  color: #333;
+}
+ .order .details {
+  margin-top: 10rpx;
+}
+ .order .lines {
+  width: 600rpx;
+  height: 2rpx;
+  background: #F3F4F8;
+  margin-top: 20rpx;
+}
+ .order .on {
+  background: #ccc;
+  height: 160rpx;
+  width: 2px;
+  margin-left: 10rpx;
+}
+.moneygoing .order-status {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 20rpx;
+}
+.order-status .business {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+.business image {
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 12rpx;
+}
+.left {
+  display: flex;
+}
+.shop {
+  line-height: 48rpx;
+}
+.shop .title {
+  font-size: 30rpx;
+  color: #222222;
+}
+.shop .iconfont {
+  font-size: 28rpx;
+}
+.merchant {
+  width: 110rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    border: 1rpx solid #E54148;
+    border-radius: 20rpx;
+    font-size: 22rpx;
+    color: #E54148;
+}
+.order-status .commodity {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+.commodity .img {
+  flex: 1.2;
+  width: 100rpx;
+  height: 76rpx !important;
+}
+.commodity .img image {
+  width: 90%;
+}
+.commodity .commoditylist {
+  flex: 6;
+  position: relative;
+  padding-top: 10rpx;
+}
+ .commoditylist .commodity-name {
+  width: 450rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+ .commoditylist .commodity-weight {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #999;
+  margin-top: 18rpx;
+}
+ .commoditylist image {
+  width: 14rpx;
+  height: 18rpx;
+  position: absolute;
+  top: 41rpx;
+  right: 25rpx;
+}
+ .information {
+  flex: 4;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #666;
+  margin-left: 24rpx;
+}
+ .information .number {
+  display: flex;
+  justify-content: space-between;
+}
+.information .number .copy {
+  width: 64rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1rpx solid #CCCCCC;
+  border-radius: 4rpx;
+  margin-right: 25rpx;
+}
+ .information .tice {
+  margin: 10rpx 0;
+}
+ .order-status .lineke {
+  width: 646rpx;
+  height: 2rpx;
+  background: #F3F4F8;
+  margin: 10rpx 28rpx;
+}

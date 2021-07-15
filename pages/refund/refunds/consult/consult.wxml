@@ -1,0 +1,48 @@
+<view class="consult">
+  <view class="shop-owner">
+    <view class="owner">
+      <view class="img">
+        <image mode="widthFix" src="/images/shucai.png"></image>
+      </view>
+      <view class="shop-status">
+        <text class="status">退款成功</text>
+        <text>2020-11-12 13::13:18</text>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="remarks">
+      <text>备注：</text>
+      <text>退款成功</text>
+    </view>
+  </view>
+  <view class="user">
+    <view class="portrait">
+      <view class="ima">
+        <image mode="widthFix" src="{{userinfo.avatarUrl}}"></image>
+      </view>
+      <view class="time">
+        <text class="price">用户申请退款</text>
+        <text>2020-11-12 14:55:12</text>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class=" details">
+      <view class="timk">
+        <text>退款金额：</text>
+        <text>￥61.6</text>
+      </view>
+      <view class="timk">
+        <text>申请原因：</text>
+        <text>拍错、误拍</text>
+      </view>
+      <view class="timk">
+        <text>联系方式：</text>
+        <text>16177261573</text>
+      </view>
+      <view class="timk">
+        <text>问题描述：</text>
+        <text>不要了</text>
+      </view>
+    </view>
+  </view>
+</view>

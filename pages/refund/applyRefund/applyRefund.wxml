@@ -1,0 +1,152 @@
+<view>
+  <view class="applyBlock">
+    <view class="title">商品信息</view>
+    <view class="commodity">
+      <view class="storeName">
+        <text class="ti">{{storeName}}</text>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+      <view class="list1">
+        <view class="listLeft" bindtap="choose">
+          <view class="pic">
+            <image src="{{goodsCover}}?x-oss-process=image/resize,w_120"></image>
+          </view>
+          <view class="words">
+            <view class="message">
+              {{goodsName}}
+            </view>
+            <view class="listRight">
+              <text class="price">¥{{refundedPrice}}</text>
+              <text>X{{quantity}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="applyReason">
+    <!-- <view class="reason">
+      <text>货物状态</text>
+      <text class="iconfont icon-down" bindtap="toShow">请选择</text>
+    </view>
+    <view class="reason">
+      <text>退款原因</text>
+      <text class="iconfont icon-down" bindtap="toShow">请选择</text>
+    </view>
+    <view class="reason2">
+      <text>退款金额</text>
+      <text class="price">¥{{totalMoney}}</text>
+    </view> -->
+    <van-cell-group>
+      <van-cell title="货物状态" value="{{vState}}" bindtap="openState" is-link />
+      <van-cell title="退款原因" value="{{vReason}}" clickable bindtap="openReason" is-link />
+      <van-cell title="退款金额" value="{{vAmount}}" clickable bindtap="openMoney"/>
+    </van-cell-group>
+  </view>
+
+  <view class="explainReason">
+    <view class="reason3">
+      <text>退款说明</text>
+      <text class="des">（可选）</text>
+    </view>
+    <textarea class="userReason" bindconfirm="reInstruc" bindblur="reInstruc"
+					confirm-type="done" auto-focus="true"  placeholder="补充说明，有助于商家更好的处理售后问题" />
+    <!-- //上传图片
+   -->
+  <!-- <view class="Pic">
+    <view class="PicBlock" wx:if="{{imgPath2!=''}}">
+      <image src="{{imgPath2}}"></image>
+      <view class="del" data-id="0" bindtap="del">
+        <text class="iconfont icon-del"></text>
+      </view>
+    </view>
+    <view class="PicBlock" wx:if="{{imgPath3!=''}}">
+      <image src="{{imgPath3}}"></image>
+      <view class="del" data-id="1" bindtap="del">
+        <text class="iconfont icon-del"></text>
+      </view>
+    </view>
+    <view class="PicBlock" bindtap="choosePic">
+      <image src="{{imgPath}}"></image>
+      <view class="del" data-id="2" wx:if="{{imgPath!='../../img/pic.png'}}" catchtap="del">
+        <text class="iconfont icon-del"></text>
+      </view>
+    </view>
+    <view class="small">(最多晒3张图片)</view>
+  </view> -->
+  <van-uploader file-list="{{ fileList }}" max-count="3" upload-text="补充凭证" bind:after-read="afterRead" bind:delete="beforeDelete" />
+</view>
+<view class="submit" bindtap="toSubmit">提交</view>
+
+	<!-- 配送方式弹窗 -->
+	<van-popup show="{{state}}" round position="bottom" bind:close="close">
+		<view class="weui-half-screen-dialog">
+			<view class="hd">
+				<view class="hd__main">
+					<strong class="title">配送方式</strong>
+				</view>
+			</view>
+			<view>
+				<van-radio-group value="{{ stateRadio }}">
+					<van-cell-group wx:for="{{goodsStatus}}" wx:key="goods">
+						<van-cell title="{{item.dictLabel}}" clickable data-dic-label="{{item.dictLabel}}" data-dict-value="{{item.dictValue}}"	bind:click="stateClick">
+							<van-radio slot="right-icon" name="{{item.dictValue}}" value="{{item.dictValue}}" />
+						</van-cell>
+					</van-cell-group>
+				</van-radio-group>
+				<button class="btn" type="warn" bindtap="close">确认</button>
+			</view>
+		</view>
+  </van-popup>
+  
+  <van-popup show="{{reason}}" round position="bottom" bind:close="close">
+		<view class="weui-half-screen-dialog">
+			<view class="hd">
+				<view class="hd__main">
+					<strong class="title">退款原因</strong>
+				</view>
+			</view>
+			<view>
+				<van-radio-group value="{{ reasonRadio }}" >
+					<van-cell-group wx:for="{{refundReson}}" wx:key="refundReson">
+						<van-cell title="{{item.dictLabel}}" clickable data-name="{{item.dictLabel}}" data-value="{{item.dictValue}}"
+							bind:click="reasonClick">
+							<van-radio slot="right-icon" name="{{item.dictValue}}" value="{{item.dictValue}}" />
+						</van-cell>
+					</van-cell-group>
+				</van-radio-group>
+				<button class="btn" type="warn" bindtap="close">确认</button>
+			</view>
+		</view>
+	</van-popup>
+
+	<!-- <van-popup show="{{ reason }}" round position="bottom" bind:close="close">
+		<view class="weui-half-screen-dialog">
+			<view class="hd">
+				<view class="hd__main">
+					<strong class="title">优惠券</strong>
+				</view>
+			</view>
+			<view class="list">
+				<radio-group>
+					<label class="check" wx:for="{{refundReson}}" wx:for-item="item" wx:for-index="index" wx:key="couponCheck"
+						data-dic-label="{{item.dictLabel}}" data-dict-value="{{item.dictValue}}" bindtap="selectReason">
+						<view class="flexbox">
+							<view class="centerbox">
+								<view class="title">{{item.dictLabel}}</view>
+							</view>
+							<view class="hd2">
+								<radio value="{{item.dictValue}}" color="#e54148" checked="false" />
+							</view>
+						</view>
+					</label>
+				</radio-group>
+				<view class="ft">
+					<button class="btn" bindtap="close">确定</button>
+				</view>
+			</view>
+		</view>
+	</van-popup> -->
+
+</view>

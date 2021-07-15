@@ -1,0 +1,95 @@
+<view class="moneygoing">
+  <view class="moeny-status">
+    <view class="details">
+      <view class="details-name">退款金额</view>
+      <view class="details-price">
+        <text class="i">￥</text>
+        <text class="price">61.6</text>
+      </view>
+    </view>
+    <view class="account">
+      <text>商互通账号</text>
+      <view class="user">
+        <view class="ime">
+          <image mode="widthFix"></image>
+        </view>
+        <view class="user-name">呢称</view>
+      </view>
+    </view>
+    <view class="payment">
+      <text>支付渠道</text>
+      <text class="weixin">微信</text>
+    </view>
+    <view class="bankcard">
+      <text>退款账户</text>
+      <text class="card">工商银行借记卡6685</text>
+    </view>
+  </view>
+  <view class="order-price">
+    <view class='order'  wx:for="{{list}}" wx:key="status">
+        <view class="iconlist">
+          <view wx:if="{{index==0}}" class='icon no-icon'>
+            <image mode="widthFix" src="/images/tuikuan2.png"></image>
+          </view>
+          <view wx:if="{{index!=0 && index!=wuliu.length-1 && index!=wuliu.length-2}}" class='icon'></view>
+          <view class='on' wx:if="{{index!=2}}"></view>
+        </view>
+        <view class='list_centent'>
+          <view class="tips">
+            <text class="status">{{item.status}}</text>
+            <text class="time">{{item.time}}</text>
+          </view>
+          <view class='details'>{{item.details}}</view>
+          <view class="lines"  wx:if="{{index!=2}}"></view>
+        </view>
+      </view>
+  </view>
+  <view class="order-status">
+    <view class="business">
+      <view class="left">
+        <image mode="widthFix" src="/images/shucai.png"></image>
+      <view class="shop">
+        <text class="title">百果园(长沙湘仪店)</text>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+      </view>
+      <view class="merchant">联系商家</view>
+    </view>
+    <view class="lineke"></view>
+    <view class="commodity">
+      <view class="img">
+        <image mode="widthFix" src="/images/iphone12.jpg"></image>
+      </view>
+      <view class="commoditylist">
+        <view class="commodity-name">小份尝鲜 A级-红宝玉草莓（大）1份120g/180g，先到先得</view>
+        <view class="commodity-weight">
+          <text>规格：</text>
+          <text>180g</text>
+        </view>
+      </view>
+      <view class="iconfont icon-gengduo"></view>
+    </view>
+    <view class="lineke"></view>
+    <view class="information">
+      <view class="number tice">
+        <view class="number-box">
+          <text>订单编号：</text>
+          <text>8759346730857</text>
+        </view>
+        <view class="copy" bindtap="copyOrderId">复制</view>
+      </view>
+      <view class="tice">
+        <text>退款金额：</text>
+        <text>￥61.6</text>
+      </view>
+      <view class="tice">
+        <text>退款原因：</text>
+        <text>拍错</text>
+      </view>
+      <view class="tice">
+        <text>申请时间：</text>
+        <text>2020.11.12 12:24:35</text>
+      </view>
+    </view>
+  </view>
+</view>

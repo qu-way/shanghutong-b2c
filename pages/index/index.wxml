@@ -1,0 +1,140 @@
+<view class="container">
+  <view class="indextip" hidden="{{isHidden}}">
+    <view class="tip acea-row row-between-wrapper">
+      <view class="text">点击“
+        <text class="iconfont icon-xiaochengxu"></text>
+        ”添加到我的小程序， 微信首页下拉即可访问商城。</view>
+      <view class="iconfont icon-guanbi1" bindtap="closeTip"></view>
+    </view>
+
+  </view>
+  <view class="header">
+    <view class="position" bindtap="toSwichtcity">
+      <image src="../../images/dingwei.png"></image>
+      <text>{{cityName}}</text>
+      <text class="iconfont icon-xia-"></text>
+    </view>
+    <navigator class="search_box" url="/pages/search/search">
+      <text class="iconfont icon-xinbaniconshangchuan-"></text>
+      <text class="seach_text">搜索商品或店铺</text>
+    </navigator>
+  </view>
+
+  <view class="news" wx:if="{{noticeData.length>0}}" bindtap="goNoticeList">
+    <view class='swiperTxt'>
+      <swiper autoplay="true" vertical="true" interval="5000" duration="800" circular="true">
+        <swiper-item catchtouchmove='catchTouchMove' wx:for="{{noticeData}}" wx:key='index'>
+          <view class="flex">
+            <view class='text'>
+              <image src="../../images/icon/kuaibao.png"></image>
+              <text class='newsTitle'>{{item.noticeTitle}}</text>
+            </view>
+            <navigator url="../notice/notice" class="icon">
+              <text>更多</text>
+            </navigator>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <view class="white">
+    <view class="swiperCenter">
+      <swiper indicator-dots="true" autoplay="true" circular="true" interval="5000" duration="500" width="100%"
+        indicator-color="#c9d4d4" easing-function="easeInCubic" indicator-active-color="#e54148" circviewar="true">
+        <swiper-item style="border-radius:40rpx;" class="sk-header-rect" wx:for="{{banner_indexData}}" wx:key="id1">
+          <image class="sviewde-image" src="{{item.advertImg}}?x-oss-process=image/resize,w_800" mode="aspectFill">
+          </image>
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <!-- icon列表 -->
+    <view class="menuBox">
+      <view class="menu" wx:for="{{gridList}}" wx:key="id2">
+        <view class="list" bindtap='toshopList' data-id="{{item.id}}" data-title="{{item.name}}">
+          <view class="menu_image">
+            <image class="sk-header-radius" src="{{item.imgUrl}}?x-oss-process=image/resize,w_120" mode="widthFix">
+            </image>
+          </view>
+          <view class="menu_text">
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 筛选下拉选择器 -->
+  <view class="nearStore">附近商家</view>
+  <dropdownmenu dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuDistrictData='{{addressList}}'
+    dropDownMenuSourceData='{{industryList}}' dropDownMenuStyleData='{{data3}}' dropDownMenuFilterData='{{data4}}'
+    bindtap="indexScrollTo" bind:selectedItem='selectedItem' style="width:100%" />
+  <view class="shop_background">
+    <view class="shop_contain">
+      <view class="shop_center" wx:for="{{storeList}}" wx:key="id3" data-store-id="{{item.id}}"
+        data-store-name="{{item.storeName}}" bindtap='toShop'>
+        <view class="bl">
+          <van-skeleton title avatar row="3" loading="{{ loading }}">
+            <view class="cont">
+              <view class="shop_left">
+                <view class="logo">
+                  <image class="sk-header-rect" src="{{item.logoUrl}}?x-oss-process=image/resize,w_200"
+                    mode="aspectFill"></image>
+                </view>
+                <view>
+                  <view class="title">{{item.storeName}}</view>
+                  <view class="star_distance">
+                    <view class="star">
+                      <text class="iconfont icon-xingxing"></text>
+                      <text class="text" wx:if='{{item.score>0}}'>5.0</text>
+                      <text class="text" wx:else>暂无评分</text>
+                    </view>
+                  </view>
+                  <!-- 商家标识 -->
+                  <view class="label">
+                    <view>
+                      <text class="name"
+                        wx:if="{{item.isSelfLifting === 0}}">{{item.isSelfLifting === 0 ? '自提' : ''}}</text>
+                    </view>
+                    <view>
+                      <text class="name"
+                        wx:if="{{item.isCommonLogistics === 0}}">{{item.isCommonLogistics === 0 ? '快递' : ''}}</text>
+                    </view>
+                  </view>
+                  <view class="shop_right_bottom" wx:if="{{item.preferential.decrease}}">
+                    <view wx:if="{{item.preferential.decrease}}" wx:key="id4" hidden="{{i>1}}" data-index="{{i}}"
+                      wx:for="{{item.preferential.decrease}}" wx:for-item="k" wx:for-index="i">
+                      <text>满减</text>
+                      满{{k[0]}}减{{k[1]}}
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class="shop_right">
+                <view class="distance" wx:if='{{distance}}' >
+                  <text class="iconfont icon-dingwei-x"></text>
+                  <text class="text" wx:if="{{item.distance>1000}}">{{filters.toFix(item.distance/1000)}}km</text>
+                  <text class="text" wx:else>{{filters.toFix(item.distance)}}m</text>
+                </view>
+                <view class="distance1" wx:else></view>
+              </view>
+            </view>
+            <!-- <view class="goods">
+          <view class="list_flex" wx:for="{{item.merchantGoods}}" wx:key="id5" wx:if="{{index < 3}}">
+            <view class="shop_list">
+              <image src="{{item.cover ? item.cover : '/images/wutu.png'}}" lazy-load="{{ true }}" ></image>
+              <view class="describe">{{item.name}}</view>
+              <view><text class="icon">￥{{item.price}}</text></view>
+            </view>
+          </view>
+        </view> -->
+          </van-skeleton>
+        </view>
+      </view>
+      <view class="empty" wx:if="{{!storeList.length}}">
+        <image src="../../images/empty_shop.png"></image>
+        <text>您的当前条件暂无店铺~</text>
+      </view>
+    </view>
+  </view>
+</view>
+<wxs module="filters" src="../../wxs/decimal.wxs"></wxs>

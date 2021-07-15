@@ -1,0 +1,18 @@
+<view hidden="{{flag}}">
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove"></view>
+ <view class="modal-dialog">
+   <view class="modal-title">
+     删除
+   </view>
+   <view class="modal-content">
+      <view class="modal-input">
+        <view>确定删除售后订单？</view>
+        <view>删除之后订单将无法恢复，请慎重考虑！</view>
+      </view>
+   </view>
+   <view class="modal-footel">
+     <view class="btn-cancel" bindtap='onCancel'>取消</view>
+     <view class="btn-cancel confirm" bindtap='onConfirm'>确定</view>
+   </view>
+ </view>
+</view>

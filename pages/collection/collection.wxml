@@ -1,0 +1,35 @@
+
+	<view class="empty" wx:if="{{!collectionList.length}}">
+      <image src="../../images/collection.png"></image>
+      <text>您还没收藏商品，快去收藏吧！</text>
+      <!-- <view class="redBtn" bindtap="goLink" data-link="/pages/idnex/index" style="background:{{skin.color}}">
+        去收藏
+      </view> -->
+    </view>
+	<!-- 订单列表 -->
+	<view class="wrap" else>
+	<view class="cart-goods-wrap" wx:for="{{collectionList}}" wx:for-item="item" wx:for-index="index" wx:key="*this">
+		<view class="cart-goods-item" bindtap="goDetail" data-id="{{item.goodsId}}">
+			<view class="cart-shop-row">
+				<view class="cart-shop-name">{{item.companyName}}</view>
+				<text class="iconfont icon-gengduo1"></text>
+			</view>
+			<view class="cart-item-wrap">
+				<view class="goods-cart-item">
+					 <image mode="aspectFit" src="{{item.goodsCover? item.goodsCover+'?x-oss-process=image/resize,w_200' : '/images/wuzhutu.png'}}"></image>
+					<view class="item-goods-detail">
+						<view class="item-goods-name">{{item.goodsName}}</view>
+						<view class="item-goods-weight">{{item.goodsSpecificationName}}180G</view>
+						<view class="item-goods-property">
+							<view class="item-goods-price">￥{{item.goodsPrice}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+    <view>
+      <i-load-more iClass="loadMore" loading="{{loadMore}}" tip="{{loadText}}" wx:if="{{!loadOver&&!showEmpty&&loadMore}}"></i-load-more>
+    </view>
+
+</view>

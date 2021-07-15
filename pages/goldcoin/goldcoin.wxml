@@ -1,0 +1,35 @@
+<!-- pages/points/points.wxml -->
+<view class="personal">
+  <view class="basicInform">
+    <image class="back-img"
+      src="{{common_header_backgroundimage?common_header_backgroundimage+'?x-oss-process=image/resize,w_120':'../../images/pocket_02.png'}}" mode="aspectFill"></image>
+    <view class="personalCon">
+      <view class="currency">
+        <view class="currency-block">
+          <view class="first">
+            <text class="currency-available">可用币</text>
+          </view>
+          <view class="block">
+            <text class="company">{{couponsMoney}}</text>
+          </view>
+          <view class="deduction">
+            <view class="box1">
+              <text class="written">下单可抵扣</text>
+              {{}}元
+            </view>
+          </view>
+          <view class="use">
+            <button class="btn" catchtap="goIndex">去使用</button>
+          </view>
+          <!-- <navigator class="coupon" url="/pages/goldcoin/detailed/detailed" hover-class="navigator-hover"> -->
+          <view class="coupon">
+            <text class="coupon-text">未到账币</text>
+            <text class="red">0</text>
+            <text class="iconfont icon-gengduo1"></text>
+          <!-- </navigator> -->
+        </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

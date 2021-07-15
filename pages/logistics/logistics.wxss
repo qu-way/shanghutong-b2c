@@ -1,0 +1,103 @@
+page {
+   background-color: #F3F4F8;
+   width: 100vw;
+   padding: 20rpx;
+   box-sizing: border-box;
+ }
+ .card {
+   padding: 20rpx;
+   color: #333;
+   background: #fff;
+   border-radius: 24rpx;
+ }
+ 
+ .card .card-header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .head {
+   padding-bottom: 20rpx;
+ }
+ 
+ .card .card-header .head .title {
+   font-size: 32rpx;
+   color: #222222;
+   font-weight: 500;
+ }
+ 
+ .card .card-content {
+   padding: 18rpx;
+   border-top: 0.1rpx solid #efefef;
+ }
+ 
+ .card .card-content .content-wrap {
+   display: flex;
+   justify-content: space-between;
+ }
+ 
+ .card .card-content .content-wrap .flex-item {
+   width: 140rpx;
+   height: 120rpx;
+   flex: 1;
+ }
+ 
+ .card-content .content-wrap .flex-item image {
+   width: 140rpx !important;
+   height: 120rpx !important;
+   border-radius: 4rpx;
+ }
+ 
+ .content-wrap .i-flex-item {
+   flex: 3;
+   line-height: 60rpx;
+ }
+ .i-flex-item .name {
+   font-size: 32rpx;
+   color: #333;
+ }
+
+ .i-flex-item .mount {
+  font-size: 26rpx;
+  color: #666;
+}
+ 
+ .clearfix:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+ }
+ 
+ .card .card-content .dot {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+ 
+ .card .card-content .dot .dot-item {
+   width: 12rpx;
+   height: 12rpx;
+   border-radius: 50%;
+   background: #d8d8d8;
+ }
+ 
+ .card .card-content .dot .dot-middle {
+   margin: 0 10rpx;
+ }
+
+ .logistics {
+   color: #333;
+   background: #fff;
+   border-radius: 30rpx;
+   margin-top: 20rpx;
+   margin-bottom: 80rpx;
+ }
+
+ .van-steps {
+   border-radius: 24rpx;
+ }
+ 
